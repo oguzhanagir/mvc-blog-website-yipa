@@ -8,6 +8,7 @@ namespace YİPABlogMVC.Controllers
 {
     public class HomeController : Controller
     {
+        //[Route("anasayfa")]
         public ActionResult Index()
         {
             return View();
