@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77E7D9AE-2A4A-4CDD-B661-6D3B5E0C7313}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YİPABlogMVC</RootNamespace>
+    <AssemblyName>YİPABlogMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44395</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="yipa-frontend\about.html" />
+    <Content Include="yipa-frontend\assets\css\bootstrap.min.css" />
+    <Content Include="yipa-frontend\assets\css\fontawesome.min.css" />
+    <Content Include="yipa-frontend\assets\css\style.css" />
+    <Content Include="yipa-frontend\assets\images\back.png" />
+    <Content Include="yipa-frontend\assets\images\featureimg.png" />
+    <Content Include="yipa-frontend\assets\images\featureimg2.png" />
+    <Content Include="yipa-frontend\assets\images\featureimg3.png" />
+    <Content Include="yipa-frontend\assets\images\logo.png" />
+    <Content Include="yipa-frontend\assets\images\services1.svg" />
+    <Content Include="yipa-frontend\assets\images\services2.svg" />
+    <Content Include="yipa-frontend\assets\images\services3.svg" />
+    <Content Include="yipa-frontend\assets\images\services4.svg" />
+    <Content Include="yipa-frontend\assets\images\services5.svg" />
+    <Content Include="yipa-frontend\assets\images\services6.svg" />
+    <Content Include="yipa-frontend\assets\js\bootstrap.min.js" />
+    <Content Include="yipa-frontend\blog.html" />
+    <Content Include="yipa-frontend\blogDetails.html" />
+    <Content Include="yipa-frontend\contact.html" />
+    <Content Include="yipa-frontend\index.html" />
+    <Content Include="yipa-frontend\services.html" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="yipa-frontend\.git\COMMIT_EDITMSG" />
+    <Content Include="yipa-frontend\.git\config" />
+    <Content Include="yipa-frontend\.git\description" />
+    <Content Include="yipa-frontend\.git\FETCH_HEAD" />
+    <Content Include="yipa-frontend\.git\HEAD" />
+    <Content Include="yipa-frontend\.git\hooks\applypatch-msg.sample" />
+    <Content Include="yipa-frontend\.git\hooks\commit-msg.sample" />
+    <Content Include="yipa-frontend\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="yipa-frontend\.git\hooks\post-update.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-applypatch.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-commit.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-push.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-rebase.sample" />
+    <Content Include="yipa-frontend\.git\hooks\pre-receive.sample" />
+    <Content Include="yipa-frontend\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="yipa-frontend\.git\hooks\push-to-checkout.sample" />
+    <Content Include="yipa-frontend\.git\hooks\update.sample" />
+    <Content Include="yipa-frontend\.git\index" />
+    <Content Include="yipa-frontend\.git\info\exclude" />
+    <Content Include="yipa-frontend\.git\logs\HEAD" />
+    <Content Include="yipa-frontend\.git\logs\refs\heads\main" />
+    <Content Include="yipa-frontend\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="yipa-frontend\.git\logs\refs\remotes\origin\main" />
+    <Content Include="yipa-frontend\.git\objects\00\54a4171ecabd8d2e52e50e9d157620d87914c3" />
+    <Content Include="yipa-frontend\.git\objects\00\bcf78c964543702d4ee8d60448e57fef2f24ae" />
+    <Content Include="yipa-frontend\.git\objects\00\c940d21687728bdac3d9feaff5f68520d6eb74" />
+    <Content Include="yipa-frontend\.git\objects\04\543d3f6223d09cdc26004e5606a5e821b4d138" />
+    <Content Include="yipa-frontend\.git\objects\05\fa7adcd63c463e97597c9dc543af681d33b0f1" />
+    <Content Include="yipa-frontend\.git\objects\06\a3af452d4ace9ef7208eb26c7a5def9b053a19" />
+    <Content Include="yipa-frontend\.git\objects\07\72ddc480e09071e9067acf40beea492eb6ed58" />
+    <Content Include="yipa-frontend\.git\objects\08\d5009de467676f4823f7b21e30c365ec060121" />
+    <Content Include="yipa-frontend\.git\objects\0c\68bab3ba738676dbeaa64619556ad6c3298083" />
+    <Content Include="yipa-frontend\.git\objects\0f\3c36dd89c62d4c34fbc0b623037b870646c3cd" />
+    <Content Include="yipa-frontend\.git\objects\10\80c459ccf4a02291e0cfffb191d07e7cd258f1" />
+    <Content Include="yipa-frontend\.git\objects\11\1bfecb09207cdf06a976f160f4aeb6e1481131" />
+    <Content Include="yipa-frontend\.git\objects\11\2c08c86a5acf8d16e43506a248158bfefaa971" />
+    <Content Include="yipa-frontend\.git\objects\12\8a1e810a0ab2d095a1061a7a56173d237084ee" />
+    <Content Include="yipa-frontend\.git\objects\12\930d7e35dff4a81c59cec651cdf993cf292122" />
+    <Content Include="yipa-frontend\.git\objects\15\b22746615f19276d0caaad6d6c9f4f285852d7" />
+    <Content Include="yipa-frontend\.git\objects\16\4095348c2830968d4add3c8941d6c0f4064e37" />
+    <Content Include="yipa-frontend\.git\objects\18\db2b5809732edd0a8832a2a8bb0ffb03ae7dfc" />
+    <Content Include="yipa-frontend\.git\objects\1f\5affbabea81658e6fc4736450727bcd6931d16" />
+    <Content Include="yipa-frontend\.git\objects\21\908687bbc3885acc08b6ce3fb4e5fd7f25c627" />
+    <Content Include="yipa-frontend\.git\objects\23\2a5563a4690d530ef46d116f669a1f489816a9" />
+    <Content Include="yipa-frontend\.git\objects\26\76d10bcec1682fd440181afbb503928c0fa4cf" />
+    <Content Include="yipa-frontend\.git\objects\27\c140a187868c8daa2228f1870d5dc9aa41c5f3" />
+    <Content Include="yipa-frontend\.git\objects\2a\4b7548bcb75a4a7a1678b4396b14ad1db86932" />
+    <Content Include="yipa-frontend\.git\objects\31\4f957ac8a1c69cf98a89f12def352a464938ef" />
+    <Content Include="yipa-frontend\.git\objects\31\b4b01b3159c64d4d8352763d6f7c493c96421f" />
+    <Content Include="yipa-frontend\.git\objects\33\a015fa80db1934bc8eff3f9c71b9889905b664" />
+    <Content Include="yipa-frontend\.git\objects\37\ed97f81019ab11c05030745ee11a2699f7a013" />
+    <Content Include="yipa-frontend\.git\objects\38\465e5ae301b3ddefabfe22b188c4fee52182c0" />
+    <Content Include="yipa-frontend\.git\objects\39\3c9d1aeb72c9fdd9b1b4c4109a78cb7a3b69c2" />
+    <Content Include="yipa-frontend\.git\objects\3a\371cbdcf67ff323bdd8348f2911091f1c83d71" />
+    <Content Include="yipa-frontend\.git\objects\3c\8f9a7171fd3b1f0d1304fb30c1122aaea9ed6a" />
+    <Content Include="yipa-frontend\.git\objects\45\1f09a25a529e2d0a35f67b85fe6ff08d3bbd19" />
+    <Content Include="yipa-frontend\.git\objects\49\a90b0223b3a9e2ec8abf25e4b910ccab8db66b" />
+    <Content Include="yipa-frontend\.git\objects\4b\24f4a204c3707efeae64fefd04d450a6a2d766" />
+    <Content Include="yipa-frontend\.git\objects\4b\e034e636bc9de3203e8f9583e92245444a13d9" />
+    <Content Include="yipa-frontend\.git\objects\4d\ad879681380a5abbaff2d2476cde02c5ceb884" />
+    <Content Include="yipa-frontend\.git\objects\4e\5e91684147b9ea2c618cc5891936044644fafb" />
+    <Content Include="yipa-frontend\.git\objects\50\4b991cf53a8d239f816f26b91982b7a28b126c" />
+    <Content Include="yipa-frontend\.git\objects\56\208ae66e45837361d0dfa99c46b336f53e03f5" />
+    <Content Include="yipa-frontend\.git\objects\57\59f3de4c2523cdd9c715b0c7259dc45bf9ae28" />
+    <Content Include="yipa-frontend\.git\objects\57\8952df46e4374967ffad973b39af6310d08344" />
+    <Content Include="yipa-frontend\.git\objects\5b\409c6c0d0b99747bd6323eab2300668d49f6ea" />
+    <Content Include="yipa-frontend\.git\objects\5b\92ee38b988d75012434bdb86a0e2d094a70102" />
+    <Content Include="yipa-frontend\.git\objects\5d\2e8531767d95c43cf6819ecee39c7c1e20380b" />
+    <Content Include="yipa-frontend\.git\objects\5d\3ba9f398ac5ebc1789c482b4658f00e9000645" />
+    <Content Include="yipa-frontend\.git\objects\5d\e9e9c29afd35ccb8ffa512d9f14ec68d6951b6" />
+    <Content Include="yipa-frontend\.git\objects\61\524be5109d8c905e1da71725e4a49a99656b53" />
+    <Content Include="yipa-frontend\.git\objects\62\7b54022dd3efd8e0818f834a8d14e5deb95b82" />
+    <Content Include="yipa-frontend\.git\objects\65\57e2922be7f8afa59d5421d6278b98b9f2b4f5" />
+    <Content Include="yipa-frontend\.git\objects\65\744907a09babf798d8ff5ea2e96adff8a31a26" />
+    <Content Include="yipa-frontend\.git\objects\66\8f7f999eb46e1ea1b0976e04244e557268251d" />
+    <Content Include="yipa-frontend\.git\objects\67\e23aab3b8c86f2bf4c9cdf5eddb715eb8c1412" />
+    <Content Include="yipa-frontend\.git\objects\6a\03c7caf640835e3b3000f4cad2ecf29ff48f6e" />
+    <Content Include="yipa-frontend\.git\objects\6c\f9dee190c039c0ba45bc20bf1e4ba856238a97" />
+    <Content Include="yipa-frontend\.git\objects\6e\e3bb5d7cc3417529f2b04ef26adfbcf6c330a9" />
+    <Content Include="yipa-frontend\.git\objects\6f\3a2913e199cebe9ace75cf7e5a2818da27fbd3" />
+    <Content Include="yipa-frontend\.git\objects\70\c7b9eea838423c5ed16c0d5735c7816b2a23bb" />
+    <Content Include="yipa-frontend\.git\objects\72\2fa9fe5f3f19c162713e835e0eb5aff5b3002a" />
+    <Content Include="yipa-frontend\.git\objects\77\4e13c1ac36fff0dbc1e58232828f01892b2a97" />
+    <Content Include="yipa-frontend\.git\objects\77\f910d4c6fec7aa3006570aa5266fce98b6663c" />
+    <Content Include="yipa-frontend\.git\objects\7a\cae2fdb3caa0f6c04fb37ce9f3c27dfaeaaa86" />
+    <Content Include="yipa-frontend\.git\objects\7e\240b2fbf6d532fc5c095039adbd7efcc818e30" />
+    <Content Include="yipa-frontend\.git\objects\7e\4e713a417129a2232021106886861ba46ffd75" />
+    <Content Include="yipa-frontend\.git\objects\7e\ec3df182af82cff061adea9ef81885027207f8" />
+    <Content Include="yipa-frontend\.git\objects\83\4f73557e3bc3ab96664d8db0cb5a423cc4880a" />
+    <Content Include="yipa-frontend\.git\objects\84\39fa237c6b07f71e04b2c6fbfa7c831c3d1957" />
+    <Content Include="yipa-frontend\.git\objects\89\811697705ef5b01b1582c1eaf4a2c2807b7372" />
+    <Content Include="yipa-frontend\.git\objects\8a\56847da4ecc1df7e51c342abcceb339a7cd914" />
+    <Content Include="yipa-frontend\.git\objects\8c\33a94a124ab0f05695f70155a73963c4a80682" />
+    <Content Include="yipa-frontend\.git\objects\8f\4e5eb6d894228e31d7226a837ad2b7dc5b5827" />
+    <Content Include="yipa-frontend\.git\objects\8f\51f105d19fcff522152d69d772008dd76ff500" />
+    <Content Include="yipa-frontend\.git\objects\8f\cb64459dfa9c076f0d7a3effbb27b5d2de72f1" />
+    <Content Include="yipa-frontend\.git\objects\91\dc75524a5410affa0bc0ec38e0aafb2740477f" />
+    <Content Include="yipa-frontend\.git\objects\99\07e4c57efe4fca67a93c751f722786282cfd41" />
+    <Content Include="yipa-frontend\.git\objects\99\27666079e9f0f74791d77b3e14013136bdbb7a" />
+    <Content Include="yipa-frontend\.git\objects\9b\7bcc6fee747ed172a6dc8b27385495b9c7c3ed" />
+    <Content Include="yipa-frontend\.git\objects\a3\0222fded84ecfb0e845d0fc29c7c27265b8851" />
+    <Content Include="yipa-frontend\.git\objects\a4\669ceaaf62e29ebd021bb08f066075c55eef83" />
+    <Content Include="yipa-frontend\.git\objects\a5\3a116deb8d13a04621f953c55df18a4c5191ad" />
+    <Content Include="yipa-frontend\.git\objects\a7\9ec34317f5906570e54e5c2dd3a8b350750543" />
+    <Content Include="yipa-frontend\.git\objects\b2\15865507ada4253696f86adc539dbec7af5177" />
+    <Content Include="yipa-frontend\.git\objects\b3\4c8e69115f22d0cc801d4236adf5cf4b83649f" />
+    <Content Include="yipa-frontend\.git\objects\b4\04a4b1fc167815c8965b533f4334d684783aba" />
+    <Content Include="yipa-frontend\.git\objects\b6\0cbc6dea71352f5ab91f93743a086f2d4659e2" />
+    <Content Include="yipa-frontend\.git\objects\b7\8ee6d5fe206f66d8aeb43aa96e7e26e6bbacb9" />
+    <Content Include="yipa-frontend\.git\objects\b9\9af3334e4fe9040a879a6f0434814990980c2f" />
+    <Content Include="yipa-frontend\.git\objects\bd\4b64bb01f1c936292da1152c7d85b96776d988" />
+    <Content Include="yipa-frontend\.git\objects\c5\f682dd7c1a907ccb2b417bda97462e33229a7a" />
+    <Content Include="yipa-frontend\.git\objects\cc\b7d5fb1f7991445267499d7be9f0eb15798895" />
+    <Content Include="yipa-frontend\.git\objects\d2\61fb158872962f148127901ce15dd55e7f47e2" />
+    <Content Include="yipa-frontend\.git\objects\dc\ee752214fdc1a5b893d0bdf190a4e2d4dcdc6c" />
+    <Content Include="yipa-frontend\.git\objects\e5\f10461c179204e22ee3dd67110fbf7b9c7a341" />
+    <Content Include="yipa-frontend\.git\objects\e7\0fba71599dd097f71df69d340279ef81788f27" />
+    <Content Include="yipa-frontend\.git\objects\e7\798c1e65131a4d9b2ace05af40b7fafdc7988d" />
+    <Content Include="yipa-frontend\.git\objects\ea\a2cf1a82264f0708674d20b936d208209cfa4b" />
+    <Content Include="yipa-frontend\.git\objects\ec\e8b2807e6eb11bd7a569c15f2e191be8bc487b" />
+    <Content Include="yipa-frontend\.git\objects\f1\9b4deca8be4d800fedb32c4ddabf9ee53ce51b" />
+    <Content Include="yipa-frontend\.git\objects\pack\pack-3a94fd98eb675d3fc5c3c54bc56519001f3002de.idx" />
+    <Content Include="yipa-frontend\.git\objects\pack\pack-3a94fd98eb675d3fc5c3c54bc56519001f3002de.pack" />
+    <Content Include="yipa-frontend\.git\ORIG_HEAD" />
+    <Content Include="yipa-frontend\.git\packed-refs" />
+    <Content Include="yipa-frontend\.git\refs\heads\main" />
+    <Content Include="yipa-frontend\.git\refs\remotes\origin\HEAD" />
+    <Content Include="yipa-frontend\.git\refs\remotes\origin\main" />
+    <Content Include="yipa-frontend\.vscode\settings.json" />
+    <Content Include="yipa-frontend\README.md" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\FeaturedBlogs.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\MainPageAbout.cshtml" />
+    <Content Include="Views\Home\Newsletter.cshtml" />
+    <Content Include="Views\Home\Footer.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\AboutContent.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Services\ServicesContent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="yipa-frontend\.git\objects\info\" />
+    <Folder Include="yipa-frontend\.git\refs\tags\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{37714126-af3d-4b6a-bafb-ea1ab62e0fe8}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{436f3086-0287-4498-8c52-6ba7ce89678b}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{34b759d8-fb04-4241-b574-365d497b92bf}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55926</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44395/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
