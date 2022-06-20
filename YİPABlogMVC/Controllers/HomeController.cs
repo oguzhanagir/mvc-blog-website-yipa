@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +9,16 @@ namespace YİPABlogMVC.Controllers
 {
     public class HomeController : Controller
     {
+        BlogManager _blogManager = new BlogManager();
+   
+
         //[Route("anasayfa")]
         public ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult FeaturedBlogs()
-        {
-            return PartialView(); 
-        }
+        
 
         public PartialViewResult Services()
         {

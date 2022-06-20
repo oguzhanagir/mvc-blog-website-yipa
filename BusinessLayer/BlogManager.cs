@@ -16,5 +16,12 @@ namespace BusinessLayer
         {
             return _repoBlog.List();
         }
+
+        public int AddBlog(Blog p)
+        {
+            return _repoBlog.Insert(p);
+        }
+
+
     }
 }
