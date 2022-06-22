@@ -28,8 +28,11 @@ namespace YİPABlogMVC.Controllers
             return PartialView(blogList);
         }
 
-        
-
+        public ActionResult BlogDetails()
+        {
+            return View();
+        }
+    
 
 
     }

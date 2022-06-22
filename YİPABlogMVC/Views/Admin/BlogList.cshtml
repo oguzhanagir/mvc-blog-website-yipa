@@ -1,3 +1,59 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
 
-<h4>Blogl Listesi</h4>
+@{
+    ViewBag.Title = "BlogList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a  href="~/Admin/AddNewBlog" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Blog Ekle</a>
+                        <h4>Table Basic</h4>
+                    </div>
+                    <div class="table-responsive">
+ 
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Yazar</th>
+                                        <th>Kategori</th>
+                                        <th>Başlık</th>
+                                        <th>Tarih</th>
+                                        <th>Yorum Sayısı</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <th>@item.BlogID</th>
+                                        <td>@item.Author.Name</td>
+                                        <td>
+                                            <span class="badge badge-primary px-2">@item.Category.Name</span>
+                                        </td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Date.ToShortDateString()</td>
+                                        <td>@item.Comments</td>
+                                        <td><a href="/Admin/DeleteBlog/@item.BlogID" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                        <td><a href="/Admin/UpdateBlog/@item.BlogID" class="btn btn-rounded btn-success">Güncelle</a></td>
+                                        <td><a href="/Admin/BlogDetails/@item.BlogID" class="btn btn-rounded btn-info">Detaylar</a></td>
+                                    </tr>
+                                        }
+                                    </tbody>
+                            </table>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewBag.Title = "AddNewCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<form method="post" class="form-group">
+
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-default" })
+    <br />
+
+    <button class="btn btn-group btn-success" >Kaydet</button>
+</form>

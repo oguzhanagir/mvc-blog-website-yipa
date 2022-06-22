@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a href="~/Admin/AddNewCategory" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Kategori Ekle</a>
+                        <h4>Kategori Listesi</h4>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Blog Sayısı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.CategoryID</th>
+                                        <td>@item.Name</td>
+                                        <td>Test</td>
+                                        <td><a href="/Admin/DeleteCategory/@item.CategoryID" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                        <td><a href="/Admin/UpdateCategory/@item.CategoryID" class="btn btn-rounded btn-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,6 @@ namespace EntityLayer.Concrete
         public string ImagePath { get; set; }
         public DateTime Date { get; set; }
 
-     
         public string Content { get; set; }
 
         public int CategoryID { get; set; }
