@@ -20,7 +20,7 @@
                                 <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name</a></span>
                                 <span class="date">&nbsp;-&nbsp; @item.Date</span>
                             </div>
-                            <p>@item.Content</p>
+                            <p>@Html.Raw(item.Content)</p>
 
                             <a class="btn mt-3 text-white" style="background-color: #43808C;"> Daha Fazla </a>
 

@@ -45,6 +45,11 @@ namespace BusinessLayer
             return _repoBlog.List().Count();
         }
 
+        public Blog FindBlog(int id)
+        {
+            return _repoBlog.Find(x => x.BlogID == id);
+        }
+
 
     }
 }

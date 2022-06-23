@@ -62,9 +62,38 @@ namespace YİPABlogMVC.Controllers
             return RedirectToAction("BlogList");
         }
 
-        public PartialViewResult UpdateBlog()
+        [HttpGet]
+        public ActionResult UpdateBlog(int id)
         {
-            return PartialView();
+            Context c = new Context();
+
+            List<SelectListItem> values = (from x in c.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.values = values;
+
+
+            List<SelectListItem> values2 = (from x in c.Authors.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.Name,
+                                                Value = x.AuthorID.ToString()
+                                            }).ToList();
+            ViewBag.values2 = values2;
+
+            Blog blog = _blogManager.FindBlog(id);
+            return View(blog);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateBlog(Blog p)
+        {
+            _blogManager.UpdateBlog(p);
+            return RedirectToAction("BlogList");
         }
 
         public ActionResult DeleteBlog(int id)
