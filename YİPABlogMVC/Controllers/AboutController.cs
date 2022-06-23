@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace YİPABlogMVC.Controllers
 {
     public class AboutController : Controller
     {
+        AboutManager _aboutManager = new AboutManager();
+
         // GET: About
         public ActionResult Index()
         {
@@ -16,7 +19,8 @@ namespace YİPABlogMVC.Controllers
 
         public PartialViewResult AboutContent()
         {
-            return PartialView();
+            var aboutList = _aboutManager.GetAll();
+            return PartialView(aboutList);
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="CategoryManager.cs" />
     <Compile Include="CommentManager.cs" />
     <Compile Include="ContactManager.cs" />
+    <Compile Include="NewsletterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceManager.cs" />
   </ItemGroup>

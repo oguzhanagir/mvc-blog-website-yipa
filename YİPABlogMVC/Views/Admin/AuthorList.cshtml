@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Author>
+@{
+    ViewBag.Title = "AuthorList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a href="~/Admin/AddNewAuthor" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Yazar Ekle</a>
+                        <h4>Yazar Listesi</h4>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>Hakkında</th>
+                                    <th>Blog Sayısı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.AuthorID</th>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.About</td>
+                                        <td>5</td>
+                                        <td><a href="/Admin/DeleteAuthor/@item.AuthorID" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                        <td><a href="/Admin/UpdateAuthor/@item.AuthorID" class="btn btn-rounded btn-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

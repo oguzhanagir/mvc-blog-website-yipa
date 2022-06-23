@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,8 @@ namespace YİPABlogMVC.Controllers
 {
     public class HomeController : Controller
     {
-        BlogManager _blogManager = new BlogManager();
+        AboutManager _aboutManager = new AboutManager();
    
-
         //[Route("anasayfa")]
         public ActionResult Index()
         {
@@ -27,13 +27,10 @@ namespace YİPABlogMVC.Controllers
 
         public PartialViewResult MainPageAbout()
         {
-            return PartialView();
+            var aboutList = _aboutManager.GetAll();
+            return PartialView(aboutList);
         }
 
-        public PartialViewResult Newsletter()
-        {
-            return PartialView();
-        }
         public PartialViewResult Footer()
         {
             return PartialView();

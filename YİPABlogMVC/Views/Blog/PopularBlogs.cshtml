@@ -18,9 +18,11 @@
                             <div class="post-meta align-items-center text-left clearfix">
                                 <!-- <figure class="author-figure mb-0 mr-3 float-left"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure> -->
                                 <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name</a></span>
-                                <span class="date">&nbsp;-&nbsp; @item.Date</span>
+                                <span class="date mt-3">&nbsp;-&nbsp; @(((DateTime)item.Date).ToString("dd,MMM,yyyy"))</span>
                             </div>
-                            <p>@Html.Raw(item.Content)</p>
+                            <p>
+                                @Html.Raw(item.Content.Substring(0, item.Content.Substring(0, 180).LastIndexOf(" ")))...
+                            </p>
 
                             <a class="btn mt-3 text-white" style="background-color: #43808C;"> Daha Fazla </a>
 

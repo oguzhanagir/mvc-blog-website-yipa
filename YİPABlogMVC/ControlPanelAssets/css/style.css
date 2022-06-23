@@ -37,7 +37,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   background-image: linear-gradient(230deg, #0e4cfd, #6a8eff); }
 
 .gradient-5 {
-    background-image: linear-gradient(to right, #98ec6d 0%, #cef6b9 100%);
+    background-image: linear-gradient(to right, #98ec6d 0%, #b9dda5 100%);
 }
 
 .gradient-6 {

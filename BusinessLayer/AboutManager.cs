@@ -30,5 +30,10 @@ namespace BusinessLayer
 
             return _repoAbout.Update(about);
         }
+
+        public About FindAbout(int id)
+        {
+            return _repoAbout.Find(x => x.AboutID == id);
+        }
     }
 }

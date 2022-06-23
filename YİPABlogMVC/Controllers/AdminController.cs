@@ -15,6 +15,8 @@ namespace YİPABlogMVC.Controllers
         AuthorManager _authorManager = new AuthorManager();
         CategoryManager _categoryManager = new CategoryManager();
         CommentManager _commentManager = new CommentManager();
+        AboutManager _aboutManager = new AboutManager();
+        NewsletterManager _newsletterManager = new NewsletterManager();
         // GET: Admin
         
         public ActionResult Index()
@@ -23,6 +25,7 @@ namespace YİPABlogMVC.Controllers
         }
 
         //Blog Start
+        #region
         public PartialViewResult BlogList()
         {
             var blogList = _blogManager.GetAll();
@@ -108,37 +111,62 @@ namespace YİPABlogMVC.Controllers
             ViewBag.blogCount = blogCount;
             return PartialView();
         }
+        #endregion
         //Blog End
 
-
         //About Start
+        #region
+        public ActionResult AboutList()
+        {
+            var aboutList = _aboutManager.GetAll();
+            return View(aboutList);
+        }
 
+        [HttpGet]
+        public ActionResult UpdateAbout(int id)
+        {
+            About about = _aboutManager.FindAbout(id);
+            return View(about);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAbout(About p)
+        {
+            _aboutManager.UpdateAbout(p);
+            return RedirectToAction("AboutList");
+        }
+
+
+        #endregion
         //About End
 
 
         //Contact Start
-
+        #region
+        #endregion
         //Contact End
-        
+
 
         //Services Start
-
+        #region
+        #endregion
         //Services End
 
 
         //Comment Start
-
+        #region
         public PartialViewResult CommentCount()
         {
             var commentCount = _commentManager.CommentCount();
             ViewBag.commentCount = commentCount;
             return PartialView();
         }
-
+        #endregion
         //Comment End
 
 
         //Category Start
+        #region
         public ActionResult CategoryList()
         {
             var categoryList = _categoryManager.GetAll();
@@ -170,17 +198,40 @@ namespace YİPABlogMVC.Controllers
             ViewBag.categoryCount = categoryCount;
             return PartialView();
         }
-
+        #endregion
         //Category End
 
         //Author Start
+        #region
+
+        public ActionResult AuthorList()
+        {
+            var authorList = _authorManager.GetAll();
+            return View(authorList);
+        }
+
         public PartialViewResult AuthorCount()
         {
             var authorCount = _authorManager.CountAuthor();
             ViewBag.authorCount = authorCount.ToString();
             return PartialView();
         }
-
+        #endregion
         //Author End
+
+        //Newsletter Start
+        #region
+        public ActionResult NewsletterList()
+        {
+            var newsletterList = _newsletterManager.GetAll();
+            return View(newsletterList);
+        }
+        public ActionResult DeleteNewsletter(int id)
+        {
+            _newsletterManager.DeleteNewsletter(id);
+            return RedirectToAction("NewsletterList");
+        }
+        #endregion
+        //Newsletter End
     }
 }

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Newsletter>
+@{
+    ViewBag.Title = "NewsletterList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>Abone Sayısı Listesi</h4>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.NewsletterId</th>
+                                        <td>@item.Mail</td>
+                                        <td><a href="/Admin/DeleteNewsletter/@item.NewsletterId" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

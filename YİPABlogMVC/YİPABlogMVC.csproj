@@ -53,6 +53,12 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -132,6 +138,7 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -143,6 +150,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\richtexteditor\lang\rte-lang-af.js" />
     <Content Include="Content\richtexteditor\lang\rte-lang-ar.js" />
     <Content Include="Content\richtexteditor\lang\rte-lang-bg.js" />
@@ -5588,7 +5596,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\MainPageAbout.cshtml" />
-    <Content Include="Views\Home\Newsletter.cshtml" />
     <Content Include="Views\Home\Footer.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\AboutContent.cshtml" />
@@ -5611,6 +5618,11 @@
     <Content Include="Views\Admin\CategoryList.cshtml" />
     <Content Include="Views\Admin\AddNewCategory.cshtml" />
     <Content Include="Views\Admin\UpdateBlog.cshtml" />
+    <Content Include="Views\Admin\AuthorList.cshtml" />
+    <Content Include="Views\Admin\AboutList.cshtml" />
+    <Content Include="Views\Admin\UpdateAbout.cshtml" />
+    <Content Include="Views\Newsletter\AddMail.cshtml" />
+    <Content Include="Views\Admin\NewsletterList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

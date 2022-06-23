@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <a class="btn btn-group btn-rounded btn-success mt-5 text-white mb-5 ml-3" href="~/Admin/UpdateAbout/@item.AboutID">Hakkımızda Güncelle</a>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>@item.TitleHome</h3>
+                <p class="mt-5">@item.ContentHome</p>
+                <p class="mt-5">@item.ImagePathHome</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h3>@item.TitleAbout</h3>
+                <p class="mt-5">@item.ContentAbout</p>
+                <p class="mt-5">@item.ImagePathAbout</p>
+
+            </div>
+        </div>
+    </div>
+
+}
+
