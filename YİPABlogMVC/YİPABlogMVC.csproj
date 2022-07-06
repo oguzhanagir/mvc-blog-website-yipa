@@ -5623,6 +5623,12 @@
     <Content Include="Views\Admin\UpdateAbout.cshtml" />
     <Content Include="Views\Newsletter\AddMail.cshtml" />
     <Content Include="Views\Admin\NewsletterList.cshtml" />
+    <Content Include="Views\Admin\ServiceList.cshtml" />
+    <Content Include="Views\Admin\AddNewService.cshtml" />
+    <Content Include="Views\Admin\UpdateService.cshtml" />
+    <Content Include="Views\Admin\SocialMediaList.cshtml" />
+    <Content Include="Views\Admin\AddNewSocialMedia.cshtml" />
+    <Content Include="Views\Admin\UpdateSocialMedia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Service>
+@{
+    ViewBag.Title = "ServiceList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a href="~/Admin/AddNewService" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Hizmet Ekle</a>
+                        <h4>Kategori Listesi</h4>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>İkon</th>
+                                    <th>Başlık</th>
+                                    <th>Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.ServiceID</th>
+                                        <th>@item.ImagePath</th>
+                                        <td>@item.Title</td>
+                                        <td>@item.Content</td>
+                                        <td><a href="/Admin/DeleteService/@item.ServiceID" class="btn btn-rounded btn-danger ">Sil</a></td>
+                                        <td><a href="/Admin/UpdateService/@item.ServiceID" class="btn btn-rounded btn-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

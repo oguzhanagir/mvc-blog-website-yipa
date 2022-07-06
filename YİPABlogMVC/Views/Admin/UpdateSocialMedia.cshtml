@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<form method="post" class="form-group w-100">
+
+    @Html.Label("Sosyal Medya ID")
+    @Html.TextBoxFor(x => x.SocialMediaID, new { @class = "form-control input-default" })
+    <br />
+    @Html.Label("İkon Yolu")
+    @Html.TextBoxFor(x => x.IconPath, new { @class = "form-control input-default" })
+    <br />
+    @Html.Label("Sosyal Medya Adı")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-default" })
+    <br />
+    @Html.Label("Sosyal Medya Linki")
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control input-default" })
+    <br />
+
+    <button class="btn btn-group btn-success">Kaydet</button>
+</form>
+
+

@@ -61,6 +61,7 @@
     <Compile Include="Concrete\Newsletter.cs" />
     <Compile Include="Concrete\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Concrete\SocialMedia.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

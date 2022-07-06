@@ -11,21 +11,27 @@ namespace YİPABlogMVC.Controllers
 {
     public class AdminController : Controller
     {
+        //Manager Class Definition Start
+        #region Manager Classes
         BlogManager _blogManager = new BlogManager();
         AuthorManager _authorManager = new AuthorManager();
         CategoryManager _categoryManager = new CategoryManager();
         CommentManager _commentManager = new CommentManager();
         AboutManager _aboutManager = new AboutManager();
         NewsletterManager _newsletterManager = new NewsletterManager();
+        ServiceManager _serviceManager = new ServiceManager();
+        SocialMediaManager _socialMediaManager = new SocialMediaManager();
+        #endregion
+        //Manager Class Definition End
         // GET: Admin
-        
+
         public ActionResult Index()
         {
             return View();
         }
 
         //Blog Start
-        #region
+        #region Blog
         public PartialViewResult BlogList()
         {
             var blogList = _blogManager.GetAll();
@@ -115,7 +121,7 @@ namespace YİPABlogMVC.Controllers
         //Blog End
 
         //About Start
-        #region
+        #region About
         public ActionResult AboutList()
         {
             var aboutList = _aboutManager.GetAll();
@@ -142,31 +148,70 @@ namespace YİPABlogMVC.Controllers
 
 
         //Contact Start
-        #region
+        #region Contact
         #endregion
         //Contact End
 
 
         //Services Start
-        #region
+        #region Service
+        public ActionResult ServiceList()
+        {
+            var serviceList = _serviceManager.GetAll();
+            return View(serviceList);
+        }
+
+        public ActionResult DeleteService(int id)
+        {
+            _serviceManager.DeleteService(id);
+            return RedirectToAction("ServiceList");
+        }
+
+        [HttpGet]
+        public ActionResult AddNewService()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewService(Service p)
+        {
+            _serviceManager.AddService(p);
+            return RedirectToAction("ServiceList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateService(int id)
+        {
+            Service service = _serviceManager.FindService(id);
+            return View(service);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateService(Service p)
+        {
+            _serviceManager.UpdateService(p);
+            return RedirectToAction("ServiceList");
+        }
+
         #endregion
         //Services End
 
 
         //Comment Start
-        #region
+        #region Comment
         public PartialViewResult CommentCount()
         {
             var commentCount = _commentManager.CommentCount();
             ViewBag.commentCount = commentCount;
             return PartialView();
         }
-        #endregion
+        #endregion 
         //Comment End
 
 
         //Category Start
-        #region
+        #region Category
         public ActionResult CategoryList()
         {
             var categoryList = _categoryManager.GetAll();
@@ -202,7 +247,7 @@ namespace YİPABlogMVC.Controllers
         //Category End
 
         //Author Start
-        #region
+        #region Author
 
         public ActionResult AuthorList()
         {
@@ -220,7 +265,7 @@ namespace YİPABlogMVC.Controllers
         //Author End
 
         //Newsletter Start
-        #region
+        #region Newsletter
         public ActionResult NewsletterList()
         {
             var newsletterList = _newsletterManager.GetAll();
@@ -233,5 +278,50 @@ namespace YİPABlogMVC.Controllers
         }
         #endregion
         //Newsletter End
+
+        //SocialMedia Start
+        #region SocialMedia
+        public ActionResult SocialMediaList()
+        {
+            var socialMediaList = _socialMediaManager.GetAll();
+            return View(socialMediaList);
+        }
+
+        [HttpGet]
+        public ActionResult AddNewSocialMedia()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewSocialMedia(SocialMedia p)
+        {
+            _socialMediaManager.AddSocialMedia(p);
+            return RedirectToAction("SocialMediaList");
+        }
+
+        public ActionResult DeleteSocialMedia(int id)
+        {
+            _socialMediaManager.DeleteSocialMedia(id);
+            return RedirectToAction("SocialMediaList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateSocialMedia(int id)
+        {
+            SocialMedia socialMedia = _socialMediaManager.FindSocialMedia(id);
+            return View(socialMedia);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateSocialMedia(SocialMedia p)
+        {
+            _socialMediaManager.UpdateSocialMedia(p);
+            return RedirectToAction("SocialMediaList");
+        }
+
+
+        #endregion
+        //SocialMedia End
     }
 }

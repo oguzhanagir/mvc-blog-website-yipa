@@ -39,6 +39,9 @@ namespace BusinessLayer
             return _repoService.Update(service);
         }
 
-
+        public Service FindService(int id)
+        {
+            return _repoService.Find(x => x.ServiceID == id);
+        }
     }
 }
