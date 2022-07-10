@@ -11,13 +11,14 @@
 <script type="text/javascript" src='~/Content/richtexteditor/plugins/all_plugins.js'></script>
 
 
-<form method="post">
-
+@using (Html.BeginForm("AddNewBlog", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control input-default" })
     <br />
-    @Html.Label("Resim Yolu")
-    @Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control input-default" })
+    @Html.Label("Resim Yükle")
+    <input type="file" name="ImagePath" />
+
     <br />
     @Html.Label("Tarih")
     @Html.TextBoxFor(x => x.Date, new { @class = "form-control input-default" })
@@ -33,7 +34,7 @@
     </textarea>
 
     <button class="btn btn-group btn-info mt-5">Kaydet</button>
-</form>
+}
 
 <script>
     var editor1 = new RichTextEditor("#inp_editor1");

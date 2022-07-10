@@ -14,7 +14,10 @@
 <div class="container" style="margin-top:160px;">
     <div class="main-content p-5">
         <div class="row">
-            <div class="col-lg-9 col-sm-12 blog-section mb-3 ">
+            <aside class="col-lg-2 col-sm-12blog-sidebar">
+                @Html.Action("CategoryList","Category")
+            </aside>
+            <div class="col-lg-10 col-sm-12 blog-section mb-3 ">
                 <div class="container">
 
                     <div class="recent-blogs-title mb-5">
@@ -40,17 +43,19 @@
                                 @foreach (var item in Model)
                                 {
                                     <div class="col-lg-4 col-sm-12 blog-img mb-5">
-                                        <img src="~/yipa-frontend/assets/images/featureimg2.png" style="width:230px; height:220px;" />
+                                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="~/yipa-frontend/assets/images/featureimg2.png" style="width:230px; height:220px;" /></a>
                                     </div>
                                     <div class="col-lg-8 col-sm-12 blog-content">
                                         <span style="font-size:14px; ">@item.Author.Name</span>
-                                        <h4 class="mt-3">@item.Title</h4>
-                                        
-                                        <p class="mt-3">
-                                            @Html.Raw(item.Content.Substring(0,item.Content.Substring(0,200).LastIndexOf(" ")))...
-                                        </p>
+                                        <h4 class="mt-3"> <a style="font-size:24px;" class="_header_online_nav_link" href="/Blog/BlogDetails/@item.BlogID">@item.Title</a></h4>
 
-                                        <a class="btn mt-4 text-white mb-5" style="background-color: #43808C;"> Daha Fazla </a>
+                                        
+                                        @Html.Raw(item.Content.Substring(0, item.Content.Substring(0, 200).LastIndexOf(" ")))...
+                                      
+
+                                        <div>
+                                            <a href="/Blog/BlogDetails/@item.BlogID" class="btn mt-4 text-white mb-5" style="background-color: #43808C;"> Daha Fazla </a>
+                                        </div>
                                     </div>
 
 
@@ -66,9 +71,7 @@
 
 
             </div>
-            <aside class="col-lg-3 col-sm-12blog-sidebar">
-                <h3>sidebar</h3>
-            </aside>
+
         </div>
     </div>
 </div>

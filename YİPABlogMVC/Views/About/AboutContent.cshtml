@@ -1,38 +1,27 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.About>
 
+<!-- About Content Start -->
 <div class="main-about">
     <div class="container" style="padding:50px;">
         <div class="row">
-            <div class="col-sm-12 col-lg-6">
-                @foreach (var item in Model)
-                {
-                    <div class="main-about-content" style="padding:30px;">
-                        <!-- About Content Start -->
-                        <h3 class="main-about-content-subTitle">@item.TitleAbout</h3>
-                        <div class="people-card" style="margin-top:50px; width:400px;">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <img src="@item.ImagePathAbout" style="width:40px; height:40px; margin-left:50px;" alt="">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h6>Kişi Adı ve Soyadı</h6>
-                                        <p>Unvan</p>
-                                    </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-12 col-lg-6">
 
-                                </div>
-                            </div>
-                        </div>
-                        <p class="main-about-content-p">
+                    <div class="main-about-content" style="padding:30px;">
+                        <h3 class="main-about-content-subTitle">@item.TitleAbout</h3>
+                        <p class="main-about-content-p mt-5">
                             @item.ContentAbout
                         </p>
-                        <!-- About Content End -->
+
                     </div>
+                    
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <img src="@item.ImagePathAbout" style="width:500px; height:500px; margin-left:100px;" alt="Ana Sayfa Hakkımda Resim">
+                </div>
                 }
             </div>
-            <div class="col-sm-12 col-lg-6">
-                <img src="~/yipa-frontend/assets/images/featureimg2.png" style="width:500px; height:500px; margin-left:100px;" alt="Ana Sayfa Hakkımda Resim">
-            </div>
-        </div>
     </div>
 </div>
+<!-- About Content End -->

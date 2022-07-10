@@ -4,8 +4,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="container mt-5 d-block w-75 " style="background-color: #b0c8c9; border-radius: 50px; padding:80px;">
+    <div class="row">
+        @Html.Action("ContactInfo", "Contact")
+
+        <div class="col-6">
+            <form class="form-group " method="post">
+                <label>Adınız</label>
+                <input class="input100" type="text" name="Name" />
+                <label>Soyadınız</label>
+                <input class="input100" type="text" name="SurName" />
+                <label>Mail Adresiniz</label>
+                <input class="input100" type="text" name="Mail" />
+                <label>Konu</label>
+                <input class="input100" type="text" name="Subject" />
+                <label>Mesajınız</label>
+                <textarea style="height:180px;" class="input100" type="text" name="Message"></textarea>
 
 
-@Html.Action("Form", "Contact")
+                <button class="btn btn-info text-white" style="margin:90px; background-color: #43808C; width:150px; height:50px; font-weight:600; margin-top:50px;">Gönder</button>
+
+
+            </form>
+        </div>
+
+        <style>
+
+            label {
+                font-size: 18px;
+                font-family: "Poppins",sans-serif;
+                margin: 14px;
+            }
+
+            input {
+                border: 0px;
+            }
+
+            textarea {
+                border: 0px;
+            }
+        </style>
+    </div>
+</div>
+
 @Html.Action("AddMail", "Newsletter")
 @Html.Action("Footer", "Home")

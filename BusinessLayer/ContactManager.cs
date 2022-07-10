@@ -17,9 +17,9 @@ namespace BusinessLayer
             return _repoContact.List();
         }
 
-        public int AddContact(Contact p)
+        public int AddContact(Contact c)
         {
-            return _repoContact.Insert(p);
+            return _repoContact.Insert(c);
         }
 
         public int DeleteContact(int p)
@@ -27,5 +27,7 @@ namespace BusinessLayer
             Contact contact = _repoContact.Find(x => x.ContactID == p);
             return _repoContact.Delete(contact);
         }
+
+        
     }
 }

@@ -33,6 +33,7 @@ namespace BusinessLayer
             Blog blog = _repoBlog.Find(x => x.BlogID == p.BlogID);
             blog.Title = p.Title;
             blog.Content = p.Content;
+            blog.ImagePath = p.ImagePath;
             blog.CategoryID = p.CategoryID;
             blog.AuthorID = p.AuthorID;
             blog.BlogID = p.BlogID;
@@ -50,6 +51,15 @@ namespace BusinessLayer
             return _repoBlog.Find(x => x.BlogID == id);
         }
 
+        public List<Blog> BlogByID(int id)
+        {
+            return _repoBlog.List(x => x.BlogID == id);
+        }
+
+        public List<Blog> GetBlogByCategory(int id)
+        {
+            return _repoBlog.List(x => x.CategoryID == id);
+        }
 
     }
 }

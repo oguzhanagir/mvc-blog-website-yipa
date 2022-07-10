@@ -6,22 +6,26 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-sm-12 col-lg-6">
+            <div class="col-sm-12 col-lg-6">
+                <a href="/About/Index">
                     <img src="@item.ImagePathHome" style="width:500px; height:500px; " alt="Ana Sayfa Hakkımda Resim">
-                </div>
+                </a>
+            </div>
                 <div class="col-sm-12 col-lg-6">
 
                     <div class="main-about-content" style="">
                         <!-- About Content Start -->
-                        <h4 class="main-about-content-subTitle">@item.TitleHome</h4>
-                        <p class="main-about-content-p">@item.ContentHome</p>
-                        <div class="services-btn mt-5">
-                            <button class="btn services-button">Daha Fazla </button>
-                        </div>
+                        <a href="/About/Index" >
+                            <h4 class="main-about-content-subTitle">@item.TitleHome</h4>
+                        </a>
+                            <p class="main-about-content-p">@item.ContentHome</p>
+                           
+                        
+                    </div>
                         <!-- About Content End -->
                     </div>
                     
-                </div>
+                
                 }
             </div>
             

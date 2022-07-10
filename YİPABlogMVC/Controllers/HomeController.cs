@@ -11,6 +11,7 @@ namespace YİPABlogMVC.Controllers
     public class HomeController : Controller
     {
         AboutManager _aboutManager = new AboutManager();
+        SocialMediaManager _socialMediaManager = new SocialMediaManager();
    
         //[Route("anasayfa")]
         public ActionResult Index()
@@ -18,12 +19,11 @@ namespace YİPABlogMVC.Controllers
             return View();
         }
 
-        
-
-        public PartialViewResult Services()
+        public PartialViewResult Header()
         {
             return PartialView();
         }
+        
 
         public PartialViewResult MainPageAbout()
         {
@@ -33,7 +33,8 @@ namespace YİPABlogMVC.Controllers
 
         public PartialViewResult Footer()
         {
-            return PartialView();
+            var socialMediaList = _socialMediaManager.GetAll();
+            return PartialView(socialMediaList);
         }
 
 

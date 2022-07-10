@@ -8,8 +8,8 @@
     @Html.Label("Service ID")
     @Html.TextBoxFor(x => x.ServiceID, new { @class = "form-control input-default" })
     <br />
-    @Html.Label("İkon  Yolu")
-    @Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control input-default" })
+    @Html.Label("İkon  Yükle")
+    <input type="file" name="ImagePath" />
     <br />
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control input-default" })

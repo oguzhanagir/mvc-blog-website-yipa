@@ -1,29 +1,21 @@
-﻿<!-- Footer Start -->
+﻿@model IEnumerable<EntityLayer.Concrete.SocialMedia>
+<!-- Footer Start -->
 <footer class="footer">
     <div class="container footer-wrap">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
                 <img src="~/yipa-frontend/assets/images/featureimg.png" style="width:50px; height:50px;" alt="Logo">
                 <div class="navbar-social-media mt-5">
-                    <a href="#">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x navbar-social-media-circle"></i>
-                            <i class="fa fa-facebook-f fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                    <a href="">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x navbar-social-media-circle"></i>
-                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
+                    @foreach (var item in Model)
+                    {
+                        <a href="@item.Address">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x navbar-social-media-circle"></i>
+                                <i class="fa fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    }
 
-                    <a class="a" href="">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x navbar-social-media-circle"></i>
-                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
                 </div>
             </div>
             <div class="col-lg-8 col-sm-12">

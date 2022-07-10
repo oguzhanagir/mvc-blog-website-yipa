@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Blog>
 
-<div class="site-section">
+<div class="section" style="margin-top:120px;">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
@@ -12,23 +12,27 @@
             {
                 <div class="col-lg-4 mb-4">
                     <div class="entry2">
-                        <a href="single.html"><img src="https://picsum.photos/id/28/400/250" style="width:400px; height:250px;" alt="Image" class="img-fluid "></a>
+                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.ImagePath" style="width:400px; height:250px;" alt="Image" class="img-fluid "></a>
                         <div class="excerpt">
-                            <h2><a href="single.html">@item.Title</a></h2>
+                            <h2><a style="font-size:22px;" class="_header_online_nav_link" href="/Blog/BlogDetails/@item.BlogID">@item.Title</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
                                 <!-- <figure class="author-figure mb-0 mr-3 float-left"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure> -->
                                 <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name</a></span>
                                 <span class="date mt-3">&nbsp;-&nbsp; @(((DateTime)item.Date).ToString("dd,MMM,yyyy"))</span>
                             </div>
-                            <p>
+                            
+                            <div>
                                 @Html.Raw(item.Content.Substring(0, item.Content.Substring(0, 180).LastIndexOf(" ")))...
-                            </p>
+                            </div>                           
 
-                            <a class="btn mt-3 text-white" style="background-color: #43808C;"> Daha Fazla </a>
-
+                            <div>
+                                <a href="/Blog/BlogDetails/@item.BlogID" class="btn mt-4 text-white mb-5" style="background-color: #43808C;"> Daha Fazla </a>
+                            </div>
+               
                         </div>
                     </div>
                 </div>
+                
             }
 
 

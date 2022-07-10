@@ -42,5 +42,10 @@ namespace BusinessLayer
         {
             return _repoCategory.List().Count();
         }
+
+        public Category FindCategory(int id)
+        {
+            return _repoCategory.Find(x => x.CategoryID == id);
+        }
     }
 }

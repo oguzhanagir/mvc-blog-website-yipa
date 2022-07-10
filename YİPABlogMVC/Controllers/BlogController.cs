@@ -17,24 +17,26 @@ namespace YİPABlogMVC.Controllers
             return View();
         }
 
-        public PartialViewResult RecentBlogs(int page = 1 )
+        public PartialViewResult RecentBlogs(int page = 1)
         {
             var blogList = _blogManager.GetAll().OrderByDescending(x => x.BlogID).ToPagedList(page,3);
             
             return PartialView(blogList);
         }
 
-        public PartialViewResult PopularBlogs(int paged = 1)
+        public PartialViewResult PopularBlogs()
         {
-            var blogList = _blogManager.GetAll().ToPagedList(paged,6);
+            var blogList = _blogManager.GetAll();
             return PartialView(blogList);
         }
 
-        public ActionResult BlogDetails()
+        public PartialViewResult BlogDetails(int id)
         {
-            return View();
+            var BlogDetailsList = _blogManager.BlogByID(id); 
+            return PartialView(BlogDetailsList);
         }
-    
+
+     
 
 
     }

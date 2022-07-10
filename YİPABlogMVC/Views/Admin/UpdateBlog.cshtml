@@ -17,8 +17,8 @@
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control input-default" })
     <br />
-    @Html.Label("Resim Yolu")
-    @Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control input-default" })
+    @Html.Label("Resim Yükle")
+    <input type="file" name="ImagePath" />
     <br />
     @Html.Label("Tarih")
     @Html.TextBoxFor(x => x.Date, new { @class = "form-control input-default" })
@@ -29,9 +29,9 @@
     @Html.Label("Yazar")
     @Html.DropDownListFor(x => x.AuthorID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control input-default" })
     <br />
-    <textarea name="Content" id="inp_editor1" class="mt-5">
-     &lt;p&gt;Blog Yazısı&lt;/p&gt; 
-    </textarea>
+    @Html.TextBoxFor(x => x.Content, new { @class = "form-control input-default", @id = "inp_editor1" })
+
+
 
     <button class="btn btn-group btn-info mt-5">Kaydet</button>
 </form>

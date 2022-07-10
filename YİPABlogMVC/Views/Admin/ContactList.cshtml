@@ -1,9 +1,8 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Category>
+﻿@model IEnumerable<EntityLayer.Concrete.Contact>
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "ContactList";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 
 <div class="container">
     <div class="row">
@@ -12,7 +11,7 @@
                 <div class="card-body">
                     <div class="card-title">
                         <a href="~/Admin/AddNewCategory" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Kategori Ekle</a>
-                        <h4>Kategori Listesi</h4>
+                        <h4>İletişim Listesi</h4>
                     </div>
                     <div class="table-responsive">
 
@@ -21,7 +20,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Adı</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,7 +29,7 @@
                                     <tr>
                                         <th>@item.CategoryID</th>
                                         <td>@item.Name</td>
-                                        
+
                                         <td><a href="/Admin/DeleteCategory/@item.CategoryID" class="btn btn-rounded btn-danger ">Sil</a></td>
                                         <td><a href="/Admin/UpdateCategory/@item.CategoryID" class="btn btn-rounded btn-success">Güncelle</a></td>
                                     </tr>
@@ -45,3 +44,4 @@
         </div>
     </div>
 </div>
+

@@ -4,8 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Action("Header", "Home")
 @Html.Action("PopularBlogs", "Blog")
-@Html.Action("Services", "Home")
+@Html.Action("ServicesContent", "Services")
 @Html.Action("MainPageAbout", "Home")
 @Html.Action("AddMail", "Newsletter")
 @Html.Action("Footer", "Home")

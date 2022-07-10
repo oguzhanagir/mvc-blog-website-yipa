@@ -3,6 +3,7 @@ using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,6 +22,7 @@ namespace YİPABlogMVC.Controllers
         NewsletterManager _newsletterManager = new NewsletterManager();
         ServiceManager _serviceManager = new ServiceManager();
         SocialMediaManager _socialMediaManager = new SocialMediaManager();
+        ContactManager _contactManager = new ContactManager();
         #endregion
         //Manager Class Definition End
         // GET: Admin
@@ -67,6 +69,14 @@ namespace YİPABlogMVC.Controllers
         [ValidateInput(false)]
         public ActionResult AddNewBlog(Blog p)
         {
+            if (Request.Files.Count>0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.ImagePath = "/Image/" + dosyaAdi;
+            }
             _blogManager.AddBlog(p);
             return RedirectToAction("BlogList");
         }
@@ -101,6 +111,14 @@ namespace YİPABlogMVC.Controllers
         [ValidateInput(false)]
         public ActionResult UpdateBlog(Blog p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.ImagePath = "/Image/" + dosyaAdi;
+            }
             _blogManager.UpdateBlog(p);
             return RedirectToAction("BlogList");
         }
@@ -149,6 +167,11 @@ namespace YİPABlogMVC.Controllers
 
         //Contact Start
         #region Contact
+        public ActionResult ContactList()
+        {
+            var contactList = _contactManager.GetAll();
+            return View(contactList);
+        }
         #endregion
         //Contact End
 
@@ -176,6 +199,14 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult AddNewService(Service p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.ImagePath = "/Image/" + dosyaAdi;
+            }
             _serviceManager.AddService(p);
             return RedirectToAction("ServiceList");
         }
@@ -190,6 +221,14 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult UpdateService(Service p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.ImagePath = "/Image/" + dosyaAdi;
+            }
             _serviceManager.UpdateService(p);
             return RedirectToAction("ServiceList");
         }
@@ -206,6 +245,8 @@ namespace YİPABlogMVC.Controllers
             ViewBag.commentCount = commentCount;
             return PartialView();
         }
+
+     
         #endregion 
         //Comment End
 
@@ -243,6 +284,21 @@ namespace YİPABlogMVC.Controllers
             ViewBag.categoryCount = categoryCount;
             return PartialView();
         }
+
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            Category category = _categoryManager.FindCategory(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category p)
+        {
+            _categoryManager.UpdateCategory(p);
+            return RedirectToAction("CategoryList","Admin");
+        }
+
         #endregion
         //Category End
 
@@ -296,6 +352,14 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult AddNewSocialMedia(SocialMedia p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.IconPath = "/Image/" + dosyaAdi;
+            }
             _socialMediaManager.AddSocialMedia(p);
             return RedirectToAction("SocialMediaList");
         }
@@ -316,9 +380,19 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult UpdateSocialMedia(SocialMedia p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.IconPath = "/Image/" + dosyaAdi;
+            }
             _socialMediaManager.UpdateSocialMedia(p);
             return RedirectToAction("SocialMediaList");
         }
+
+       
 
 
         #endregion

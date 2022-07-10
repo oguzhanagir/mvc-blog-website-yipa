@@ -136,6 +136,8 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsletterController.cs" />
@@ -5594,7 +5596,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="yipa-frontend\README.md" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\MainPageAbout.cshtml" />
     <Content Include="Views\Home\Footer.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
@@ -5605,7 +5606,6 @@
     <Content Include="Views\Blog\RecentBlogs.cshtml" />
     <Content Include="Views\Blog\PopularBlogs.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Contact\Form.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\BlogList.cshtml" />
@@ -5629,11 +5629,19 @@
     <Content Include="Views\Admin\SocialMediaList.cshtml" />
     <Content Include="Views\Admin\AddNewSocialMedia.cshtml" />
     <Content Include="Views\Admin\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\Admin\SocialMediaFirstThree.cshtml" />
+    <Content Include="Views\Home\Header.cshtml" />
+    <Content Include="Views\Category\CategoryList.cshtml" />
+    <Content Include="Views\Comment\CommentByBlog.cshtml" />
+    <Content Include="Views\Contact\ContactInfo.cshtml" />
+    <Content Include="Views\Admin\UpdateCategory.cshtml" />
+    <Content Include="Views\Admin\ContactList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ControlPanelAssets\plugins\jqvmap\js\maps\" />
     <Folder Include="ControlPanelAssets\plugins\summernote\css\" />
+    <Folder Include="Image\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

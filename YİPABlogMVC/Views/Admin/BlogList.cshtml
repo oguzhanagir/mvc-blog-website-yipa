@@ -27,7 +27,6 @@
                                         <th>Kategori</th>
                                         <th>Başlık</th>
                                         <th>Tarih</th>
-                                        <th>Yorum Sayısı</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -41,10 +40,9 @@
                                         </td>
                                         <td>@item.Title</td>
                                         <td>@item.Date.ToShortDateString()</td>
-                                        <td>@item.Comments</td>
                                         <td><a href="/Admin/DeleteBlog/@item.BlogID" class="btn btn-rounded btn-danger ">Sil</a></td>
                                         <td><a href="/Admin/UpdateBlog/@item.BlogID" class="btn btn-rounded btn-success">Güncelle</a></td>
-                                        <td><a href="/Admin/BlogDetails/@item.BlogID" class="btn btn-rounded btn-info">Detaylar</a></td>
+                                        <td><a href="/Blog/BlogDetails/@item.BlogID" class="btn btn-rounded btn-info">Detaylar</a></td>
                                     </tr>
                                         }
                                     </tbody>

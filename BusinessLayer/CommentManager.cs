@@ -33,6 +33,10 @@ namespace BusinessLayer
             return _repoComment.List().Count();
         }
 
+        public List<Comment> CommentByBlog(int id)
+        {
+            return _repoComment.List(x => x.BlogID == id);
+        }
         
     }
 }
