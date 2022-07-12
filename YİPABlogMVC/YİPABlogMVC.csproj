@@ -5636,6 +5636,9 @@
     <Content Include="Views\Contact\ContactInfo.cshtml" />
     <Content Include="Views\Admin\UpdateCategory.cshtml" />
     <Content Include="Views\Admin\ContactList.cshtml" />
+    <Content Include="Views\Admin\ReadMessage.cshtml" />
+    <Content Include="Views\Admin\SentList.cshtml" />
+    <Content Include="Views\Admin\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

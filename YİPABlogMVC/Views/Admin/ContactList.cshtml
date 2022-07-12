@@ -4,44 +4,59 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
+
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title">
-                        <a href="~/Admin/AddNewCategory" class="btn btn-group btn-rounded btn-dark mb-5">Yeni Kategori Ekle</a>
-                        <h4>İletişim Listesi</h4>
+                    <div class="email-left-box">
+                        <a href="/Admin/SendMessage" class="btn btn-primary btn-block">Mail Gönder</a>
+                        <div class="mail-list mt-4">
+                            <a href="/Admin/ContactList" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Inbox</b> <span class="badge badge-primary badge-sm float-right m-t-5">198</span> </a>
+                            <a href="/Admin/SentList" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Sent</a>  
+                        </div>
+                        
                     </div>
-                    <div class="table-responsive">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Adı</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <th>@item.CategoryID</th>
-                                        <td>@item.Name</td>
-
-                                        <td><a href="/Admin/DeleteCategory/@item.CategoryID" class="btn btn-rounded btn-danger ">Sil</a></td>
-                                        <td><a href="/Admin/UpdateCategory/@item.CategoryID" class="btn btn-rounded btn-success">Güncelle</a></td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-
-
+                    <div class="email-right-box">
+                        
+                        <div class="email-list m-t-15">
+                            @foreach (var item in Model)
+                            {
+                                <div class="message">
+                                    <a href="email-read.html">
+                                        <div class="col-mail col-mail-1">
+                                            <div class="email-checkbox">
+                                                <label class="toggle" for="chk2"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-mail col-mail-2">
+                                            <div class="subject"><a href="/Admin/ReadMessage/@item.ContactID">@item.Subject</a></div>
+                                            <div class="date">11:49 am</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <!-- panel -->
+                        <div class="row mt-5">
+                            <div class="col-7">
+                                <div class="text-left">1 - 20 of 568</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="btn-group float-right">
+                                    <button class="btn btn-gradient" type="button">
+                                        <i class="fa fa-angle-left"></i>
+                                    </button>
+                                    <button class="btn btn-dark" type="button">
+                                        <i class="fa fa-angle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-

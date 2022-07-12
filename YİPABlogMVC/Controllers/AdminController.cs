@@ -172,6 +172,36 @@ namespace YİPABlogMVC.Controllers
             var contactList = _contactManager.GetAll();
             return View(contactList);
         }
+
+        public ActionResult ReadMessage(int id)
+        {
+            var readMessageContent = _contactManager.ContactByID(id);
+            return View(readMessageContent);
+        }
+
+        public ActionResult SentList()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult SendMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Contact p)
+        {
+            return View();
+        }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            _contactManager.DeleteContact(id);
+            return View();
+        }
+
         #endregion
         //Contact End
 

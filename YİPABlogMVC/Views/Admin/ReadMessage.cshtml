@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Contact>
+@{
+    ViewBag.Title = "ReadMessage";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="email-left-box">
+                        <a href="/Admin/SendMessage" class="btn btn-primary btn-block">Mail Gönder</a>
+                        <div class="mail-list mt-4">
+                            <a href="/Admin/ContactList" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Gelen Kutusu</b> </a>
+                            <a href="/Admin/SentList" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilenler</a> 
+                        </div>
+                        
+                    </div>
+                    <div class="email-right-box">
+                        @foreach (var item in Model)
+                        {
+                            <div class="toolbar" role="toolbar">
+                                <div class="btn-group m-b-20">
+                                    <a href="/Admin/DeleteContact/@item.ContactID" class="btn btn-light">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            <div class="read-content">
+                                <div class="media pt-5">
+                                    <div class="media-body">
+                                        <h5 class="m-b-3">@item.Name  @item.SurName</h5>
+                                        <p class="m-b-2">20 May 2018</p>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="media mb-4 mt-1">
+                                    <div class="media-body">
+                                        <span class="float-right">07:23 AM</span>
+                                        <h4 class="m-0 text-primary">@item.Subject</h4><small class="text-muted">To:Me,@item.Mail</small>
+                                    </div>
+                                </div>
+                                <p class="mb-5">
+                                    @item.Message
+                                </p>
+                                
+              
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -28,6 +28,11 @@ namespace BusinessLayer
             return _repoContact.Delete(contact);
         }
 
-        
+        public List<Contact> ContactByID(int id)
+        {
+            return _repoContact.List(x => x.ContactID == id);
+        }
+
+
     }
 }
