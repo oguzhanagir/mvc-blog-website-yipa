@@ -5,7 +5,7 @@
 }
 
 
-@using (Html.BeginForm("SocialMediaList", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UpdateSocialMedia", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.Label("Sosyal Medya ID")
     @Html.TextBoxFor(x => x.SocialMediaID, new { @class = "form-control input-default" })

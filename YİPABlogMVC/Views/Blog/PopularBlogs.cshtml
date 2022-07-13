@@ -17,7 +17,7 @@
                             <h2><a style="font-size:22px;" class="_header_online_nav_link" href="/Blog/BlogDetails/@item.BlogID">@item.Title</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
                                 <!-- <figure class="author-figure mb-0 mr-3 float-left"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure> -->
-                                <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name</a></span>
+                                <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name @item.Author.Surname</a></span>
                                 <span class="date mt-3">&nbsp;-&nbsp; @(((DateTime)item.Date).ToString("dd,MMM,yyyy"))</span>
                             </div>
                             

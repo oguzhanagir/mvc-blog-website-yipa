@@ -7,9 +7,7 @@
 
 @using (Html.BeginForm("AddNewSocialMedia", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.Label("İkon  Yükle")
-    <input type="file" name="ImagePath" />
-    <br />
+
     @Html.Label("Sosyal Medya Adı")
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-default" })
     <br />

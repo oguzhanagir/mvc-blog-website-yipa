@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EntityLayer.Concrete.SocialMedia>
+<div class="navbar-social-media">
+
+    <ul class="navbar-nav">
+        <li class="nav-item navbar-social-media-li ">
+
+            @foreach (var item in Model)
+            {
+                <a href="@item.Address">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x navbar-social-media-circle"></i>
+                        <i class="fa fa-@item.Name fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+            }
+
+
+        </li>
+    </ul>
+</div>

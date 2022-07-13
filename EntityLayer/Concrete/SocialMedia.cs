@@ -15,7 +15,6 @@ namespace EntityLayer.Concrete
         public string Name { get; set; }
         [StringLength(80)]
         public string Address { get; set; }
-        [StringLength(80)]
-        public string IconPath { get; set; }
+
     }
 }

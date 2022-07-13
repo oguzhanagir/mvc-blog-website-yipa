@@ -20,5 +20,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Service> Services { get; set; }
         public DbSet<Newsletter> Newsletters { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Sent> Sents { get; set; }
     }
 }

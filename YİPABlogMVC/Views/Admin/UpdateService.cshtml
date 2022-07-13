@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("ServiceList", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UpdateService", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.Label("Service ID")
     @Html.TextBoxFor(x => x.ServiceID, new { @class = "form-control input-default" })

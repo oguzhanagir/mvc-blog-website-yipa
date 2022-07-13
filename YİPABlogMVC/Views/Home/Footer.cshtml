@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EntityLayer.Concrete.SocialMedia>
+﻿
 <!-- Footer Start -->
 <footer class="footer">
     <div class="container footer-wrap">
@@ -6,14 +6,7 @@
             <div class="col-lg-4 col-sm-12">
                 <img src="~/yipa-frontend/assets/images/featureimg.png" style="width:50px; height:50px;" alt="Logo">
                 <div class="navbar-social-media mt-5">
-                    @foreach (var item in Model)
-                    {
-                        <a href="@item.Address">
-                            <span class="fa-stack fa-lg">
-                                <img src="@item.IconPath" />
-                            </span>
-                        </a>
-                    }
+                   @Html.Action("SocialMediaList","Home")
 
                 </div>
             </div>

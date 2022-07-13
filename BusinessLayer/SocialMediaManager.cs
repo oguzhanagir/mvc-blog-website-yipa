@@ -30,7 +30,6 @@ namespace BusinessLayer
         public int UpdateSocialMedia(SocialMedia p)
         {
             SocialMedia socialMedia = _repoSocial.Find(x => x.SocialMediaID == p.SocialMediaID);
-            socialMedia.IconPath = p.IconPath;
             socialMedia.Name = p.Name;
             socialMedia.Address = p.Address;
             socialMedia.SocialMediaID = p.SocialMediaID;

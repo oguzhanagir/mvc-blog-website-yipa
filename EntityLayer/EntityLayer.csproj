@@ -59,6 +59,7 @@
     <Compile Include="Concrete\Comment.cs" />
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\Newsletter.cs" />
+    <Compile Include="Concrete\Sent.cs" />
     <Compile Include="Concrete\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Concrete\SocialMedia.cs" />

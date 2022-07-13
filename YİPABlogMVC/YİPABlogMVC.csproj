@@ -5749,7 +5749,6 @@
     <Content Include="Views\Admin\SocialMediaList.cshtml" />
     <Content Include="Views\Admin\AddNewSocialMedia.cshtml" />
     <Content Include="Views\Admin\UpdateSocialMedia.cshtml" />
-    <Content Include="Views\Admin\SocialMediaFirstThree.cshtml" />
     <Content Include="Views\Home\Header.cshtml" />
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\Comment\CommentByBlog.cshtml" />
@@ -5763,6 +5762,7 @@
     <Content Include="Views\Error\Page404.cshtml" />
     <Content Include="Views\Error\Page403.cshtml" />
     <Content Include="Views\Error\Page401.cshtml" />
+    <Content Include="Views\Home\SocialMediaList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

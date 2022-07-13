@@ -201,7 +201,7 @@ namespace YİPABlogMVC.Controllers
         public ActionResult DeleteMessage(int id)
         {
             _contactManager.DeleteContact(id);
-            return View();
+            return RedirectToAction("ContactList","Admin");
         }
 
         #endregion
@@ -384,14 +384,7 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult AddNewSocialMedia(SocialMedia p)
         {
-            if (Request.Files.Count > 0)
-            {
-                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
-                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                p.IconPath = "/Image/" + dosyaAdi;
-            }
+            
             _socialMediaManager.AddSocialMedia(p);
             return RedirectToAction("SocialMediaList");
         }
@@ -412,14 +405,7 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult UpdateSocialMedia(SocialMedia p)
         {
-            if (Request.Files.Count > 0)
-            {
-                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
-                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                p.IconPath = "/Image/" + dosyaAdi;
-            }
+            
             _socialMediaManager.UpdateSocialMedia(p);
             return RedirectToAction("SocialMediaList");
         }
