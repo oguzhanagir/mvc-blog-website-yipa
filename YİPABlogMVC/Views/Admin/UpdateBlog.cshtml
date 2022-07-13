@@ -9,8 +9,8 @@
 <script type="text/javascript" src='~/Content/richtexteditor/plugins/all_plugins.js'></script>
 
 
-<form method="post">
-
+@using (Html.BeginForm("BlogList", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.Label("BlogID")
     @Html.TextBoxFor(x => x.BlogID, new { @class = "form-control input-default" })
     <br />
@@ -34,9 +34,8 @@
 
 
     <button class="btn btn-group btn-info mt-5">Kaydet</button>
-</form>
-
-<script>
-    var editor1 = new RichTextEditor("#inp_editor1");
-</script>
+}
+    <script>
+        var editor1 = new RichTextEditor("#inp_editor1");
+    </script>
 

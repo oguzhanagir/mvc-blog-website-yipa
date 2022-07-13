@@ -25,7 +25,7 @@ namespace BusinessLayer
             about.ImagePathHome = p.ImagePathHome;
             about.ImagePathAbout = p.ImagePathAbout;
             about.TitleAbout = p.TitleAbout;
-            about.TitleHome = p.TitleAbout;
+            about.TitleHome = p.TitleHome;
             about.AboutID = p.AboutID;
 
             return _repoAbout.Update(about);

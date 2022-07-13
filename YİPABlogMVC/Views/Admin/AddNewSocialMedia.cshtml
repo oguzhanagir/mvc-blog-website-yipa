@@ -5,8 +5,8 @@
 }
 
 
-<form method="post" class="form-group w-100">
-
+@using (Html.BeginForm("AddNewSocialMedia", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.Label("İkon  Yükle")
     <input type="file" name="ImagePath" />
     <br />
@@ -18,5 +18,5 @@
     <br />
 
     <button class="btn btn-group btn-success">Kaydet</button>
-</form>
+}
 

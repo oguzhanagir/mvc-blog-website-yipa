@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace YİPABlogMVC.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         //Manager Class Definition Start
@@ -111,6 +112,7 @@ namespace YİPABlogMVC.Controllers
         [ValidateInput(false)]
         public ActionResult UpdateBlog(Blog p)
         {
+            
             if (Request.Files.Count > 0)
             {
                 string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
