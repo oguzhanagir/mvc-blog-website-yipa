@@ -34,7 +34,10 @@ namespace BusinessLayer
             service.Title = p.Title;
             service.Content = p.Content;
             service.ServiceID = p.ServiceID;
-            service.ImagePath = p.ImagePath;
+            if (p.ImagePath != "")
+            {
+                service.ImagePath = p.ImagePath;
+            }
 
             return _repoService.Update(service);
         }

@@ -24,6 +24,7 @@ namespace YİPABlogMVC.Controllers
         ServiceManager _serviceManager = new ServiceManager();
         SocialMediaManager _socialMediaManager = new SocialMediaManager();
         ContactManager _contactManager = new ContactManager();
+        SentManager _sentManager = new SentManager();
         #endregion
         //Manager Class Definition End
         // GET: Admin
@@ -105,6 +106,7 @@ namespace YİPABlogMVC.Controllers
             ViewBag.values2 = values2;
 
             Blog blog = _blogManager.FindBlog(id);
+            
             return View(blog);
         }
 
@@ -115,11 +117,18 @@ namespace YİPABlogMVC.Controllers
             
             if (Request.Files.Count > 0)
             {
-                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
-                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                p.ImagePath = "/Image/" + dosyaAdi;
+                if (Request.Files[0].FileName == "")
+                {
+                    p.ImagePath = "";
+                }
+                else
+                {
+                    string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaAdi;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    p.ImagePath = "/Image/" + dosyaAdi;
+                }
+
             }
             _blogManager.UpdateBlog(p);
             return RedirectToAction("BlogList");
@@ -158,6 +167,47 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult UpdateAbout(About p)
         {
+            if (Request.Files.Count > 0)
+            {
+                if (Request.Files[0].FileName == "" && Request.Files[1].FileName == "")
+                {
+                    p.ImagePathHome = "";
+                    p.ImagePathAbout = "";
+                }
+                else
+                {
+                    if (Request.Files[0].FileName == "" && Request.Files[1].FileName != "")
+                    {
+                        string dosyaAdi = Path.GetFileName(Request.Files[1].FileName);
+                        string yol = "~/Image/" + dosyaAdi;
+                        Request.Files[1].SaveAs(Server.MapPath(yol));
+                        p.ImagePathAbout = "/Image/" + dosyaAdi;
+                        p.ImagePathHome = "";
+                    }
+                    else if (Request.Files[0].FileName != "" && Request.Files[1].FileName == "")
+                    {
+                        string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                        string yol = "~/Image/" + dosyaAdi;
+                        Request.Files[0].SaveAs(Server.MapPath(yol));
+                        p.ImagePathHome = "/Image/" + dosyaAdi;
+                        p.ImagePathAbout = "";
+                    }
+                    else
+                    {
+                        string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                        string yol = "~/Image/" + dosyaAdi;
+                        Request.Files[0].SaveAs(Server.MapPath(yol));
+                        p.ImagePathHome = "/Image/" + dosyaAdi;
+
+                        dosyaAdi = Path.GetFileName(Request.Files[1].FileName);
+                        yol = "~/Image/" + dosyaAdi;
+                        Request.Files[1].SaveAs(Server.MapPath(yol));
+                        p.ImagePathAbout = "/Image/" + dosyaAdi;
+                    }                   
+                }
+
+            }
+
             _aboutManager.UpdateAbout(p);
             return RedirectToAction("AboutList");
         }
@@ -183,7 +233,8 @@ namespace YİPABlogMVC.Controllers
 
         public ActionResult SentList()
         {
-            return View();
+            var sentList = _sentManager.GetAll();
+            return View(sentList);
         }
 
         [HttpGet]
@@ -193,9 +244,11 @@ namespace YİPABlogMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendMessage(Contact p)
+        public ActionResult SendMessage(Sent p)
         {
-            return View();
+            _sentManager.AddSent(p);
+            _contactManager.SendMessage();
+            return RedirectToAction("SentList","Admin");
         }
 
         public ActionResult DeleteMessage(int id)
@@ -255,11 +308,18 @@ namespace YİPABlogMVC.Controllers
         {
             if (Request.Files.Count > 0)
             {
-                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
-                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                p.ImagePath = "/Image/" + dosyaAdi;
+                if (Request.Files[0].FileName == "")
+                {
+                    p.ImagePath = "";
+                }
+                else
+                {
+                    string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaAdi;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    p.ImagePath = "/Image/" + dosyaAdi;
+                }
+
             }
             _serviceManager.UpdateService(p);
             return RedirectToAction("ServiceList");

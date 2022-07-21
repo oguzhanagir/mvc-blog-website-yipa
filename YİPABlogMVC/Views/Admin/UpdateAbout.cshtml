@@ -5,7 +5,8 @@
 }
 
 
-<form method="post" class="w-100" >
+@using (Html.BeginForm("UpdateAbout", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.Label("AboutID")
     @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control input-default" })
     <br />
@@ -15,8 +16,8 @@
     @Html.Label("Ana Sayfa Hakkımda İçerik")
     @Html.TextBoxFor(x => x.ContentHome, new { @class = "form-control input-default" })
     <br />
-    @Html.Label("Ana Sayfa Hakkımda Resim Yolu")
-    @Html.TextBoxFor(x => x.ImagePathHome, new { @class = "form-control input-default" })
+    @Html.Label("Ana Sayfa Hakkımda Resim Yükle")
+    <input type="file" name="ImagePathHome" />
     <br />
     @Html.Label("Hakkımızda Başlık")
     @Html.TextBoxFor(x => x.TitleAbout, new { @class = "form-control input-default" })
@@ -24,8 +25,8 @@
     @Html.Label("Hakkımızda İçerik")
     @Html.TextBoxFor(x => x.ContentAbout, new { @class = "form-control input-default" })
     <br />
-    @Html.Label("Hakkımızda Resim Yolu")
-    @Html.TextBoxFor(x => x.ImagePathAbout, new { @class = "form-control input-default" })
+    @Html.Label("Hakkımızda Resim Yükle")
+    <input type="file" name="ImagePathAbout" />
 
     <button class="btn btn-group btn-rounded btn-success mt-3">Güncelle</button>
-</form>
+}

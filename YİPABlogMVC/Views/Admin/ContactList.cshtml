@@ -13,13 +13,13 @@
                     <div class="email-left-box">
                         <a href="/Admin/SendMessage" class="btn btn-primary btn-block">Mail Gönder</a>
                         <div class="mail-list mt-4">
-                            <a href="/Admin/ContactList" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Inbox</b> <span class="badge badge-primary badge-sm float-right m-t-5">198</span> </a>
-                            <a href="/Admin/SentList" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Sent</a>  
+                            <a href="/Admin/ContactList" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <b>Gelen Kutusu</b> </a>
+                            <a href="/Admin/SentList" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilenler</a>  
                         </div>
                         
                     </div>
                     <div class="email-right-box">
-                        
+                        <p style="font-size:18px; color:darkblue; font-weight:700">Gönderilenler</p>
                         <div class="email-list m-t-15">
                             @foreach (var item in Model)
                             {

@@ -22,8 +22,15 @@ namespace BusinessLayer
             About about = _repoAbout.Find(x => x.AboutID == p.AboutID);
             about.ContentHome = p.ContentHome;
             about.ContentAbout = p.ContentAbout;
-            about.ImagePathHome = p.ImagePathHome;
-            about.ImagePathAbout = p.ImagePathAbout;
+            if (p.ImagePathAbout != "")
+            {
+                about.ImagePathAbout = p.ImagePathAbout;
+            }
+            if (p.ImagePathHome != "")
+            {
+                about.ImagePathHome = p.ImagePathHome;
+            }
+
             about.TitleAbout = p.TitleAbout;
             about.TitleHome = p.TitleHome;
             about.AboutID = p.AboutID;
@@ -35,5 +42,7 @@ namespace BusinessLayer
         {
             return _repoAbout.Find(x => x.AboutID == id);
         }
+
+         
     }
 }
