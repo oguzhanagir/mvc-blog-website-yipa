@@ -247,7 +247,7 @@ namespace YİPABlogMVC.Controllers
         public ActionResult SendMessage(Sent p)
         {
             _sentManager.AddSent(p);
-            _contactManager.SendMessage();
+            _contactManager.SendMessage(p.ToMail, p.Subject, p.Message);
             return RedirectToAction("SentList","Admin");
         }
 

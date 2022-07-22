@@ -62,6 +62,10 @@ namespace BusinessLayer
 
         public List<Blog> GetBlogByCategory(int id)
         {
+            if (id == 0)
+            {
+                return _repoBlog.List();
+            }
             return _repoBlog.List(x => x.CategoryID == id);
         }
 

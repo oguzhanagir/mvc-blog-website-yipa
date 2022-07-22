@@ -17,9 +17,9 @@ namespace YİPABlogMVC.Controllers
             return View();
         }
 
-        public PartialViewResult RecentBlogs(int page = 1)
+        public PartialViewResult RecentBlogs(int page = 1, int id=0)
         {
-            var blogList = _blogManager.GetAll().OrderByDescending(x => x.BlogID).ToPagedList(page,3);
+            var blogList = _blogManager.GetBlogByCategory(id).OrderByDescending(x => x.BlogID).ToPagedList(page,3);
             
             return PartialView(blogList);
         }

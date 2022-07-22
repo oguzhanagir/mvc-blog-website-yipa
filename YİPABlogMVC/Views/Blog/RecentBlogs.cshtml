@@ -6,10 +6,16 @@
 <style>
     .page-link a {
         font-family: "Poppins", sans-serif;
-        color: darkgreen;
-        padding:15px;
-        font-size:18px;       
-            }
+        color: #00788A !important;
+        padding: 15px;
+        font-size: 20px;
+        font-weight:800;
+    }
+
+    .page-div{
+        float:right;
+        border-radius:70px;
+    }
 </style>
 <div class="container" style="margin-top:160px;">
     <div class="main-content p-5">
@@ -21,23 +27,25 @@
                 <div class="container">
 
                     <div class="recent-blogs-title mb-5">
-                        <h3>Son Bloglar</h3>
-                        <hr size="7" class="line mt-3 w-auto">
+                        <h3 class="w-auto">Son Bloglar</h3>
+                            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }),
+                           new PagedListRenderOptions
+                           {
+                               
+                               DisplayLinkToIndividualPages = true,
+                               DisplayPageCountAndCurrentLocation = false,
+                               MaximumPageNumbersToDisplay = 10,
+                               LiElementClasses = new string[] { "page-item" },
+                               ContainerDivClasses = new string[] { "page-link w-50 page-div" },
+                           }
+                          
+                          )
+                        <hr size="7" class="line w-auto " style="margin-top:70px;" >
                     </div>
                     <div class="mb-4 p-4">
-                        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }),
-                       new PagedListRenderOptions
-                       {
-                           DisplayLinkToIndividualPages = true,
-                           DisplayPageCountAndCurrentLocation = false,
-                           MaximumPageNumbersToDisplay = 10,
-                           LiElementClasses = new string[] { "page-item" },
-                           ContainerDivClasses = new string[] { "page-link" },
-
-                       }
-                       )
+                        
                     </div>
-                    <div class="recent-blogs-content">
+                    <div class="recent-blogs-content" id="recent-blogs">
                         <div class="container">
                             <div class="row">
                                 @foreach (var item in Model)
@@ -46,7 +54,7 @@
                                         <a href="/Blog/BlogDetails/@item.BlogID"><img src="~/yipa-frontend/assets/images/featureimg2.png" style="width:230px; height:220px;" /></a>
                                     </div>
                                     <div class="col-lg-8 col-sm-12 blog-content">
-                                        <span style="font-size:14px; ">@item.Author.Name @item.Author.Surname</span>
+                                        <span style="font-size:14px; font-weight:600 ">@item.Author.Name @item.Author.Surname</span>
                                         <h4 class="mt-3"> <a style="font-size:24px;" class="_header_online_nav_link" href="/Blog/BlogDetails/@item.BlogID">@item.Title</a></h4>
 
                                         

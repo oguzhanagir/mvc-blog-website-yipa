@@ -6,12 +6,21 @@
 
 @foreach (var item in Model)
 {
-    <div class="container p-5 w-75">
+    <div class="container p-5 w-100">
         <div class="row">
-            <div class="col-12">
-                <img src="@item.ImagePath" class="mt-5 justify-content-center" />
-                <h3 class="mt-5 mb-5">@item.Title</h3>
+            <div class="col-10">
+                <img src="@item.ImagePath" style="width:850px; height:450px;" class="mt-5 justify-content-center m-auto" />
+                <h3 class="text-center m-5" style="
+                    font-family:Arial, Helvetica, sans-serif; 
+                    font-weight:700; 
+                    font-size:32px;
+                    line-height:32px;">
+                    @item.Title</h3>
                 <p>@Html.Raw(item.Content)</p>
+            </div>
+
+            <div class="col-2">
+                <h1>Side</h1>
             </div>
         </div>
     </div>

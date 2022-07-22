@@ -1,11 +1,14 @@
-﻿using DataAccessLayer.Concrete;
+﻿
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
+
 
 namespace BusinessLayer
 {
@@ -33,41 +36,37 @@ namespace BusinessLayer
         {
             return _repoContact.List(x => x.ContactID == id);
         }
-
-        public string  SendMessage()
+        
+        public void SendMessage(string mail, string subject, string message)
         {
             try
             {
-                MailMessage newMail = new MailMessage();
-                // use the Gmail SMTP Host
-                SmtpClient client = new SmtpClient("smtp.gmail.com");
+                MailMessage mailMessage = new MailMessage();
+                SmtpClient client = new SmtpClient();
 
-                // Follow the RFS 5321 Email Standard
-                newMail.From = new MailAddress("yipasendmail@gmail.com", "YipaBlog");
+                client.Credentials = new System.Net.NetworkCredential("yipasend@hotmail.com", "142536oA.1");
 
-                newMail.To.Add("yipasendmail@gmail.com");// declare the email subject
+                client.Port = 587;
 
-                newMail.Subject = "My First Email"; // use HTML for the email body
+                client.Host = "smtp-mail.outlook.com";
 
-                newMail.IsBodyHtml = true; newMail.Body =
-                    "<h1> This is my first Templated Email in C# </h1>";
-
-                // enable SSL for encryption across channels
                 client.EnableSsl = true;
-                // Port 465 for SSL communication
-                client.Port = 465;
-                // Provide authentication information with Gmail SMTP server to authenticate your sender account
-                client.Credentials = new System.Net.NetworkCredential("yipasendmail@gmail.com", "142536oA.");
 
-                client.Send(newMail); // Send the constructed mail
-                return "Başarılı";
+                mailMessage.To.Add(mail);
+
+                mailMessage.From = new MailAddress("yipasend@hotmail.com");
+
+                mailMessage.Subject = subject;
+
+                mailMessage.Body = message;
+
+                client.Send(mailMessage);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return "Error -" + ex ;
+                throw e;
             }
+
         }
-
-
     }
 }
