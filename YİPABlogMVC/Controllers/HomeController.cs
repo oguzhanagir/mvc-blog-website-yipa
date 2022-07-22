@@ -33,8 +33,8 @@ namespace YİPABlogMVC.Controllers
 
         public PartialViewResult Footer()
         {
-            
-            return PartialView();
+            var aboutList = _aboutManager.GetAll();
+            return PartialView(aboutList);
         }
 
         public PartialViewResult SocialMediaList() 

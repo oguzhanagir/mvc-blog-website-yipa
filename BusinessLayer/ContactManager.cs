@@ -68,5 +68,10 @@ namespace BusinessLayer
             }
 
         }
+
+        public int MessageCount()
+        {
+            return _repoContact.List().Count();
+        }
     }
 }

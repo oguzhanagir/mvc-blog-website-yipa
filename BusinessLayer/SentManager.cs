@@ -22,6 +22,16 @@ namespace BusinessLayer
             return _repoSent.Insert(p);
         }
 
-        
+        public List<Sent> SentByID(int id)
+        {
+            return _repoSent.List(x => x.SentID == id);
+        }
+
+        public int DeleteSent(int id)
+        {
+            Sent sent = _repoSent.Find(x => x.SentID == id);
+            return _repoSent.Delete(sent);
+        }
+
     }
 }

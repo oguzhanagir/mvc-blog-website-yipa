@@ -237,6 +237,12 @@ namespace YİPABlogMVC.Controllers
             return View(sentList);
         }
 
+        public ActionResult ReadSent(int id)
+        {
+            var readSentContent = _sentManager.SentByID(id);
+            return View(readSentContent);
+        }
+
         [HttpGet]
         public ActionResult SendMessage()
         {
@@ -255,6 +261,19 @@ namespace YİPABlogMVC.Controllers
         {
             _contactManager.DeleteContact(id);
             return RedirectToAction("ContactList","Admin");
+        }
+
+        public ActionResult DeleteSent(int id)
+        {
+            _sentManager.DeleteSent(id);
+            return RedirectToAction("SentList", "Admin");
+        }
+
+        public PartialViewResult MessageCount()
+        {
+            var messageCount = _contactManager.MessageCount();
+            ViewBag.MessageCount = messageCount;
+            return PartialView();
         }
 
         #endregion
