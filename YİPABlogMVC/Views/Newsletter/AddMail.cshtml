@@ -1,21 +1,118 @@
-﻿ <!-- Abone Ol Start -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="subscribe-newsletter">
-            <div class="subscribe-heading">
-                <h2>Abone Ol</h2>
+﻿<div class="subscription bg-white mt-5 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="subscription-wrapper mt-5">
+                    <div class="d-flex  justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
+                        <h3 class="flex-fill">E-Bültenimize <br>Abone Olun</h3>
+                        <form method="post" class="row flex-fill">
+                            <div class="col-lg-7 my-md-2 my-2">
+                                <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Mail Adresin" name="Mail">
+                            </div>
+                            <div class="col-lg-5 my-md-2 my-2">
+                                <button type="submit" class="btn2 btn-primary btn-lg border-0 w-100">Abone Ol</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <form method="post">
-                <input class="input100 m-auto" type="text" name="Mail" placeholder="Email">
-                <button class="button ">Abone Ol</button>
-            </form>
         </div>
     </div>
 </div>
-<!-- Abone Ol End -->
+
 
 <style>
-    input{
-        border:0;
+
+
+
+    .subscription.bg-white {
+        background: none;
+        
+    }
+
+    .bg-white {
+        background-color: #EAFBFF !important;
+    }
+
+    .subscription.bg-white .subscription-wrapper {
+        background: #fff;
+    }
+
+    .subscription-wrapper {
+        border-radius:50px;
+        padding: 70px 50px;
+        z-index: 1;
+        width: 100%;
+        background: linear-gradient(80deg, #0030cc 0%, #00a4db 100%);
+        top: 100px;
+    }
+
+    .subscription-wrapper {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+  
+
+    h3, .h3 {
+        font-size: 30px;
+    }
+
+    .flex-fill {
+        -ms-flex: 1 1 auto !important;
+        flex: 1 1 auto !important;
+    }
+
+    .subscription.bg-white .form-control {
+        border: 1px solid #ebebeb !important;
+    }
+
+    .subscription-wrapper .form-control {
+        height: 60px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 45px;
+    }
+
+        .subscription-wrapper .form-control:focus {
+            background: rgba(255, 255, 255, 0.1);
+            outline: 0;
+            box-shadow: none;
+        }
+
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        border: 0;
+        color: #fff;
+    }
+
+
+
+    .btn2 {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        padding: 18px 45px;
+        border-radius: 45px;
+        font-weight: 500;
+        border: 1px solid;
+        position: relative;
+        z-index: 1;
+        transition: .3s ease-in;
+        overflow: hidden;
+    }
+
+    .btn-primary:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 102%;
+        height: 100%;
+        background: rgb(67,128,140);
+        background: linear-gradient(90deg, rgba(67,128,140,1) 0%, rgba(134,178,189,1) 100%);
+        z-index: -1;
+        transition: ease 0.3s;
     }
 </style>

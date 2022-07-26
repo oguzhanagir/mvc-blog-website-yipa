@@ -27,17 +27,15 @@
                             @foreach (var item in Model)
                             {
                                 <div class="message">
-                                    <a href="email-read.html">
-                                        <div class="col-mail col-mail-1">
-                                            <div class="email-checkbox">
-                                                <label class="toggle" for="chk2"></label>
-                                            </div>
-                                        </div>
+                                   
+                                   <a href="/Admin/ReadSent/@item.SentID">
                                         <div class="col-mail col-mail-2">
-                                            <div class="subject"><a href="/Admin/ReadSent/@item.SentID">@item.Subject</a></div>
+                                            <div class="subject">@item.Subject</div>
                                             <div class="date">11:49 am</div>
                                         </div>
+
                                     </a>
+                       
                                 </div>
                             }
                         </div>

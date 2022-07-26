@@ -17,5 +17,7 @@ namespace EntityLayer.Concrete
 
         [StringLength(20)]
         public string Password { get; set; }
+
+        
     }
 }

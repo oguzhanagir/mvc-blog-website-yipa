@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Contact>
+
+<div class="drop-down animated fadeIn dropdown-menu">
+    <div class="dropdown-content-heading d-flex justify-content-between">
+        <span class="">3 Yeni Mesaj</span>
+
+    </div>
+    <div class="dropdown-content-body">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li class="notification-unread">
+                    <a href="/Admin/ReadMessage/@item.ContactID">
+                        <div class="notification-content">
+                            <div class="notification-heading">@item.Name  @item.SurName</div>
+                            <div class="notification-timestamp">@item.MessageDate</div>
+                            <div class="notification-text">@item.Message</div>
+                        </div>
+                    </a>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+</div>

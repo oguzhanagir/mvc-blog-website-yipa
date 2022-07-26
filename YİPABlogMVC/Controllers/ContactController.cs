@@ -21,6 +21,7 @@ namespace YİPABlogMVC.Controllers
         [HttpPost]
         public ActionResult Index(Contact p)
         {
+            p.MessageDate = DateTime.Now;
             _contactManager.AddContact(p);
             return RedirectToAction("Index","Contact");
         }

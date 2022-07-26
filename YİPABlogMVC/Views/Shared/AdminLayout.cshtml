@@ -74,57 +74,7 @@
                                 <i class="mdi mdi-email-outline"></i>
                                 <span class="badge gradient-1 badge-pill badge-primary">3</span>
                             </a>
-                            <div class="drop-down animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">3 Yeni Mesaj</span>
-
-                                </div>
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Saiful Islam</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Adam Smith</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Can you do me a favour?</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Barak Obama</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Hilari Clinton</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hello</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </div>
+                          @Html.Action("Notification","Admin")
                         </li>
                                               
                     </ul>
@@ -210,7 +160,7 @@
                     </li>
              
                     <li>
-                        <a " href="~/Home/Index" aria-expanded="false">
+                        <a " href="/Home/Index" aria-expanded="false">
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Ön Yüz</span>
                         </a>
 

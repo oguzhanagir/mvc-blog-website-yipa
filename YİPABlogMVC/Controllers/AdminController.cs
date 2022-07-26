@@ -276,6 +276,12 @@ namespace YİPABlogMVC.Controllers
             return PartialView();
         }
 
+        public PartialViewResult Notification()
+        {
+            var notifications = _contactManager.GetAll().OrderByDescending(x=> x.ContactID);
+            return PartialView(notifications);
+        }
+
         #endregion
         //Contact End
 

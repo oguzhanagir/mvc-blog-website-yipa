@@ -29,7 +29,7 @@
                                 @Html.TextBoxFor(x => x.Subject, new { @class = "form-control bg-transparent" })
                                 <br />
                                 @Html.Label("Mesaj")
-                                @Html.TextAreaFor(x => x.Message, new { @class = "form-control bg-transparent" })
+                                @Html.TextAreaFor(x => x.Message, new { @class = "form-control bg-transparent messageTextArea" })
 
                                 <button class="btn btn-group btn-info mt-5">Gönder</button>
                                 <a href="/Admin/ContactList" class="btn btn-group btn-info bg-dark mt-5 text-white">İptal Et</a>
@@ -46,3 +46,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    .messageTextArea{
+        height:200px !important;
+    }
+</style>

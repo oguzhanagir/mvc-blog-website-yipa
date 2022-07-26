@@ -1,43 +1,52 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Blog>
 
-<div class="section" style="margin-top:120px;">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2>Öne Çıkan Postlar</h2>
-            </div>
-        </div>
-        <div class="row">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/slider/style.css">
+
+<div class="section" style="margin-top:120px; padding-left:150px; padding-right:150px;">
+    <div class="container1">
+        <div class="slider">
+            @{ int counter = 0; }
             @foreach (var item in Model)
             {
-                <div class="col-lg-4 mb-4">
-                    <div class="entry2">
-                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.ImagePath" style="width:400px; height:250px;" alt="Image" class="img-fluid "></a>
-                        <div class="excerpt">
-                            <h2><a style="font-size:22px;" class="_header_online_nav_link" href="/Blog/BlogDetails/@item.BlogID">@item.Title</a></h2>
-                            <div class="post-meta align-items-center text-left clearfix">
-                                <!-- <figure class="author-figure mb-0 mr-3 float-left"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure> -->
-                                <span class="d-inline-block author">Yazar <a href="#">@item.Author.Name @item.Author.Surname</a></span>
-                                <span class="date mt-3">&nbsp;-&nbsp; @(((DateTime)item.Date).ToString("dd,MMM,yyyy"))</span>
-                            </div>
-                            
-                            <div>
-                                @Html.Raw(item.Content.Substring(0, item.Content.Substring(0, 180).LastIndexOf(" ")))...
-                            </div>                           
-
-                            <div>
-                                <a href="/Blog/BlogDetails/@item.BlogID" class="btn mt-4 text-white mb-5" style="background-color: #43808C;"> Daha Fazla </a>
-                            </div>
-               
-                        </div>
+                counter++;
+                <div class="box5 box">
+                    <div class="bg"></div>
+                    <div class="details">
+                        <h1>@item.Title</h1>
+                        <p>
+                            @Html.Raw(item.Content.Substring(0, item.Content.Substring(0, 150).LastIndexOf(" ")))...
+                        </p>
+                        <button onclick="location.href='/Blog/BlogDetails/@item.BlogID'">Daha Fazla</button>
                     </div>
+
+                    <div class="illustration"><img class="inner" src="~/yipa-frontend/assets/images/featureimg.png" /></div>
                 </div>
                 
+                if (counter == 5)
+                {
+                    break;
+                }
+
             }
 
 
+            
+
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="prev" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#fff" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="next" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#fff" /></svg>
+        <div class="trail">
+            
         </div>
     </div>
-</div>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/CSSRulePlugin.min.js"></script> -->
+    <script src="~/slider/script.js"></script>
+
+</div>
 

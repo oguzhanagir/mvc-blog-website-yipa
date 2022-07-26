@@ -26,7 +26,7 @@ namespace YİPABlogMVC.Controllers
 
         public PartialViewResult PopularBlogs()
         {
-            var blogList = _blogManager.GetAll();
+            var blogList = _blogManager.GetPopularBlogs();
             return PartialView(blogList);
         }
 

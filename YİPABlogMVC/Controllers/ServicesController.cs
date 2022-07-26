@@ -22,5 +22,11 @@ namespace YİPABlogMVC.Controllers
             var serviceList = _serviceManager.GetAll();
             return PartialView(serviceList);
         }
+
+        public PartialViewResult SliderServices()
+        {
+            var serviceList = _serviceManager.GetAll();
+            return PartialView(serviceList);
+        }
     }
 }

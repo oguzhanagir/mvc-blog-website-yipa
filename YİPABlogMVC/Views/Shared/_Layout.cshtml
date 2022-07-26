@@ -19,9 +19,8 @@
 
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="~/yipa-frontend/assets/css/bootstrap.min.css">
-
-    <!-- CSS -->
+<link rel="stylesheet" href="~/yipa-frontend/assets/css/bootstrap.min.css"/>
+      <!-- CSS -->
     <link rel="stylesheet" href="~/yipa-frontend/assets/css/style.css">
 
 
@@ -33,7 +32,7 @@
         <!-- Navbar Start-->
         <div class="container-fluid">
             <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-light _header_online_navbar">
+                <nav class="navbar navbar-expand-lg navbar-light _header_online_navbar ">
                     <div class="container-fluid">
 
                         <button class="navbar-toggler _toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +59,7 @@
                                     <a class="nav-link _header_online_nav_link" href="/Contact/Index">İletişim</a>
                                 </li>
                             </ul>
-                            @Html.Action("SocialMediaList","Home")
+                            @Html.Action("SocialMediaList", "Home")
 
                         </div>
                     </div>
@@ -70,14 +69,17 @@
 
         </div>
         <!-- Navbar End -->
-       
+
     </header>
 
-    
-        @RenderBody()
-    
+
+    @RenderBody()
+
 
     <!-- Bootstrap js  -->
-    <script src="~/yipa-frontend/assets/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -7,10 +7,13 @@
     .page-link a {
         font-family: "Poppins", sans-serif;
         color: #00788A !important;
-        padding: 15px;
+        padding: 12px;
         font-size: 20px;
         font-weight:800;
+
     }
+
+    
 
     .page-div{
         float:right;
@@ -35,8 +38,8 @@
                                DisplayLinkToIndividualPages = true,
                                DisplayPageCountAndCurrentLocation = false,
                                MaximumPageNumbersToDisplay = 10,
-                               LiElementClasses = new string[] { "page-item" },
-                               ContainerDivClasses = new string[] { "page-link w-50 page-div" },
+                               LiElementClasses = new string[] { "page-item li-page" },
+                               ContainerDivClasses = new string[] { "page-link w-25 page-div" },
                            }
                           
                           )
@@ -62,7 +65,7 @@
                                       
 
                                         <div>
-                                            <a href="/Blog/BlogDetails/@item.BlogID" class="btn mt-4 text-white mb-5" style="background-color: #43808C;"> Daha Fazla </a>
+                                            <a href="/Blog/BlogDetails/@item.BlogID" class="btn mt-4 text-white  mb-5" style="background-color: #43808C; border-radius:34px; width:120px; padding:14px;"> Daha Fazla </a>
                                         </div>
                                     </div>
 

@@ -43,6 +43,8 @@ namespace YİPABlogMVC.Controllers
             return PartialView(socialMediaList);
         }
 
+       
+
 
     }
 }

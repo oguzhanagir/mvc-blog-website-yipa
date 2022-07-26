@@ -69,5 +69,11 @@ namespace BusinessLayer
             return _repoBlog.List(x => x.CategoryID == id);
         }
 
+        public List<Blog> GetPopularBlogs()
+        {
+          
+            return _repoBlog.List();
+        }
+
     }
 }
